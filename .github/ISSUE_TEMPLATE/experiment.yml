@@ -1,0 +1,30 @@
+name: 분석 실험
+description: 비교 조건과 판단 근거가 남는 실험을 등록합니다.
+title: '[실험] '
+labels: ['type: experiment']
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: 확인할 질문과 가설
+    validations:
+      required: true
+  - type: textarea
+    id: design
+    attributes:
+      label: 데이터·분석 단위·분할·특징
+      description: 독립 표본 단위, 시간/그룹 경계와 누수 방지 방법을 포함합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: evaluation
+    attributes:
+      label: 기준선·평가 기준·완료 기준
+      description: 정답 라벨이 없으면 경보 빈도, 사건 맥락, 사례 분석 등으로 정의합니다.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 결과·근거·한계
+      description: 실험을 마친 뒤 문서와 PR 링크를 추가합니다.

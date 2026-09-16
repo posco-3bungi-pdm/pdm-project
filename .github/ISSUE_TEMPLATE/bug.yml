@@ -1,0 +1,24 @@
+name: 오류
+description: 재현 가능한 오류와 기대 결과를 기록합니다.
+title: '[오류] '
+labels: ['type: bug']
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 순서와 실행 환경
+      description: 실행 명령, Python 버전, 데이터 버전을 적어주세요. 원본 데이터는 첨부하지 않습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과와 오류 메시지
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대한 결과
+    validations:
+      required: true

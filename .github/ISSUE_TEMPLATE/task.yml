@@ -1,0 +1,26 @@
+name: 작업
+description: 목적과 완료 기준이 있는 작업을 등록합니다.
+title: '[작업] '
+labels: ['type: task']
+body:
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 목적
+      description: 왜 필요한 작업인가요?
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: 해야 할 일과 담당 파일
+      placeholder: '- [ ] 데이터 품질 점검 항목 정리'
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 기준
+      description: 어떤 결과를 확인하면 끝인가요?
+    validations:
+      required: true

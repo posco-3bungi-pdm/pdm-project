@@ -1,0 +1,42 @@
+name: Assign new issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  assign-author:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Assign a team member's issue to its author
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            if (issue.assignees.length || issue.user.type !== 'User') return;
+            const username = issue.user.login;
+            let permission;
+            try {
+              const response = await github.rest.repos.getCollaboratorPermissionLevel({
+                ...context.repo, username
+              });
+              permission = response.data.permission;
+            } catch (error) {
+              if (error.status === 404) {
+                core.info('Author is not a repository collaborator.');
+                return;
+              }
+              throw error;
+            }
+            if (!['admin', 'maintain', 'write'].includes(permission)) {
+              core.info('Author does not have write access; leave unassigned.');
+              return;
+            }
+            await github.rest.issues.addAssignees({
+              ...context.repo, issue_number: issue.number, assignees: [username]
+            });

@@ -1,0 +1,43 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+.vscode/
+.idea/
+
+# Python and notebook cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+
+# Local source data and generated datasets
+data/*
+!data/README.md
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.db
+*.duckdb
+*.sqlite*
+*.pkl
+*.pickle
+*.joblib
+
+# Temporary exports and model runs
+outputs/
+models/
+mlruns/
+wandb/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Reviewed figures and reports may be committed explicitly.

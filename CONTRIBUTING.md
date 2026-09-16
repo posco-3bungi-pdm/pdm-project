@@ -37,4 +37,4 @@ git push -u origin feat/12-data-quality
 
 ## 5. 진행 상황
 
-프로젝트 보드에서 Backlog → Ready → In progress → In review → Done 순으로 이동합니다. 날짜는 팀의 실제 일정이 정해진 뒤 입력합니다. 역할은 책임 범위이며 특정 사람만 코드를 작성한다는 뜻이 아닙니다.
+현재는 Issue·라벨·마일스톤으로 진행 상황을 관리합니다. Projects 보드를 도입하면 Backlog → Ready → In progress → In review → Done 순으로 이동합니다. 날짜는 팀의 실제 일정이 정해진 뒤 입력합니다. 역할은 책임 범위이며 특정 사람만 코드를 작성한다는 뜻이 아닙니다.

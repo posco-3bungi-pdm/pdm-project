@@ -23,6 +23,8 @@
 
 ## 현재 관리 방식
 
-기존 조직 멤버에게 저장소 Write 이상 권한을 부여했습니다. 별도 GitHub Team과 조직 Projects 보드는 아직 생성하지 않았으며, 현재는 Issue·라벨·마일스톤으로 작업을 관리합니다.
+기존 조직 멤버 5명을 pdm-team으로 묶고 두 저장소에 팀 단위 Write 권한을 부여했습니다. 기존 조직 소유자 권한은 유지합니다.
+
+[프로젝트 보드](https://github.com/orgs/posco-3bungi-pdm/projects/1)의 진행 보드에서 상태를 옮기고, 전체 작업 보기에서 Priority·Stage·Target date를 관리합니다. 상태는 Backlog → Ready → In progress → In review → Done입니다. 일정은 실제 합의 후 입력합니다. 현재 Issue와 PR의 보드 상태 이동은 수동이며, 자동 배정과 CI만 Actions로 실행합니다.
 
 CI는 파일 정책·Python 문법·노트북 스키마를 확인합니다. 분석 결과나 데이터 누수의 타당성은 사람이 검토하고 후속 분석 테스트로 보강합니다.

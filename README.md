@@ -4,7 +4,7 @@
 ### 설비 데이터를 점검과 보전의 근거로
 
 [![CI](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml/badge.svg)](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml)
-[작업 목록](https://github.com/posco-3bungi-pdm/pdm-project/issues) · [Pull requests](https://github.com/posco-3bungi-pdm/pdm-project/pulls) · [협업 안내](CONTRIBUTING.md)
+[작업 목록](https://github.com/posco-3bungi-pdm/pdm-project/issues) · [Pull requests](https://github.com/posco-3bungi-pdm/pdm-project/pulls) · [프로젝트 보드](https://github.com/orgs/posco-3bungi-pdm/projects/1) · [협업 안내](CONTRIBUTING.md)
 
 </div>
 

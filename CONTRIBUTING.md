@@ -24,7 +24,7 @@ git commit -m "feat: 코일 단위 특징 생성"
 git push -u origin feat/12-data-quality
 ```
 
-원본 데이터·비밀번호·토큰·`.env`는 올리지 않습니다. 노트북 출력은 지우고 커밋하며, 공유할 결과는 검토한 그림과 요약 문서로 남깁니다.
+원본 데이터·비밀번호·토큰·`.env`는 올리지 않습니다. 노트북 출력은 지우고 커밋하며, 공유할 결과는 검토한 그림과 요약 문서로 남깁니다. clone 후 한 번 `.\.venv\Scripts\python.exe -m nbstripout --install --attributes .gitattributes`를 실행하면 `git add` 시점에 출력이 자동으로 제거됩니다. 실행하지 않으면 출력이 그대로 커밋되어 CI가 실패합니다.
 
 ## 4. PR과 리뷰
 

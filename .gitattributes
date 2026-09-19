@@ -8,3 +8,7 @@
 *.pdf binary
 *.pptx binary
 *.docx binary
+
+*.ipynb filter=nbstripout
+*.zpln filter=nbstripout
+*.ipynb diff=ipynb

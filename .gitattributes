@@ -9,6 +9,7 @@
 *.pptx binary
 *.docx binary
 
+# 노트북 출력 자동 제거 (clone 후 1회:
+#   .\.venv\Scripts\python.exe -m nbstripout --install --attributes .gitattributes)
 *.ipynb filter=nbstripout
-*.zpln filter=nbstripout
 *.ipynb diff=ipynb

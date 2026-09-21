@@ -48,7 +48,12 @@ def validate(root, tracked):
             if path.suffix == '.py':
                 ast.parse(path.read_text(encoding='utf-8-sig'), filename=name)
             elif path.suffix == '.ipynb':
-                notebook = nbformat.read(path, as_version=4)
+                # nbstripout 필터는 `git add` 시점에 출력을 지우므로 작업 폴더 사본에는
+                # 출력이 남아 있을 수 있다. 실제로 커밋되는 사본(스테이징된 blob)을 검사한다.
+                staged = subprocess.check_output(
+                    ['git', 'cat-file', 'blob', f':{name}'], cwd=root
+                ).decode('utf-8')
+                notebook = nbformat.reads(staged, as_version=4)
                 nbformat.validate(notebook)
                 for index, cell in enumerate(notebook.cells, start=1):
                     if cell.cell_type == 'code' and (cell.outputs or cell.execution_count is not None):

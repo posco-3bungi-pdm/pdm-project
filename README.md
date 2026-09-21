@@ -22,17 +22,25 @@
 
 ## 시작하기
 
-Python 3.12를 기준으로 협업합니다. 다음 명령은 저장소 루트에서 실행합니다.
+Python 3.14를 기준으로 협업합니다. 다음 명령은 저장소 루트에서 실행합니다.
 
 ```powershell
 git clone https://github.com/posco-3bungi-pdm/pdm-project.git
 cd pdm-project
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-ci.txt
+py -3.14 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-ci.txt
+.\.venv\Scripts\python.exe -m nbstripout --install --attributes .gitattributes
 .\.venv\Scripts\python.exe .github/scripts/check_repository.py
 ```
 
-위 명령은 **저장소 형식 검사**입니다. 분석 실행 명령은 주제와 의존성이 확정되면 이 문서에 추가합니다. 데이터 준비 방법은 [data/README.md](data/README.md)를 참고합니다.
+- `py -3.14`는 Windows의 Python 실행 관리자에게 3.14로 가상환경을 만들라고 지정합니다. 가상환경의 파이썬 버전은 만드는 순간 고정되므로, 버전을 바꾸려면 `.venv`를 지우고 다시 만듭니다.
+- 가상환경은 만든 경로를 기억합니다. 프로젝트 폴더 이름을 바꾸거나 옮기면 `.venv\Scripts\pip.exe`와 `activate`가 깨지므로 `.venv`를 다시 만듭니다.
+- 패키지 설치는 `python -m pip`로 실행합니다. 지금 켜져 있는 파이썬에 설치된다는 것이 명령에 드러납니다.
+- `requirements.txt`는 분석용, `requirements-ci.txt`는 CI 검사용(`nbformat` 버전 고정)입니다. 로컬에 둘 다 설치하면 CI와 같은 버전으로 미리 검사할 수 있습니다.
+- `nbstripout --install`은 이 저장소(`.git/config`)에만 필터를 등록합니다. 등록 후에는 `git add` 시점에 노트북 출력이 자동으로 제거됩니다. clone할 때마다 1회 실행해야 합니다.
+
+마지막 줄은 **저장소 형식 검사**입니다. 분석 실행 명령은 주제와 의존성이 확정되면 이 문서에 추가합니다. 데이터 준비 방법은 [data/README.md](data/README.md)를 참고합니다.
 
 ## 폴더 안내
 

@@ -3,6 +3,7 @@
 | 기능 | 언제 실행되는가 | 하는 일 |
 | --- | --- | --- |
 | CI / Repository checks | PR, main push, 수동 실행 | 필수 문서·파일 정책·Python 문법·노트북 스키마 검사 |
+| nbstripout git 필터 | 로컬 `git add` | 노트북 출력·실행 번호를 커밋 사본에서 자동 제거 (clone 후 1회 등록) |
 | Assign new issues | 새 Issue | Write 이상 권한을 가진 작성자에게 자동 배정 |
 | Dependabot | 매주 | Actions·CI 패키지 업데이트 PR 생성 |
 

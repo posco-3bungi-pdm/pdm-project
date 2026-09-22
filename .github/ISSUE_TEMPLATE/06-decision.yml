@@ -1,0 +1,30 @@
+name: 팀 결정 기록
+description: 폴더 구조·이름 규칙·평가 기준처럼 팀이 합의해야 하는 것을 기록합니다.
+title: '[결정] '
+labels: ['type: docs']
+body:
+  - type: textarea
+    id: topic
+    attributes:
+      label: 정해야 할 것
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: 선택지와 장단점
+      placeholder: |
+        A)
+        B)
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: 결정과 이유
+      description: 회의나 투표로 정한 뒤 채웁니다.
+  - type: input
+    id: deadline
+    attributes:
+      label: 결정 기한
+      placeholder: 예) 9/24 아침회의

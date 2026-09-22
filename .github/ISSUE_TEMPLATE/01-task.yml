@@ -1,5 +1,5 @@
-name: 작업
-description: 목적과 완료 기준이 있는 작업을 등록합니다.
+name: 작업 요청
+description: 목적과 완료 기준이 있는 일반 작업(문서·정리·일정)을 등록합니다.
 title: '[작업] '
 labels: ['type: task']
 body:
@@ -24,3 +24,8 @@ body:
       description: 어떤 결과를 확인하면 끝인가요?
     validations:
       required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: 참고 자료
+      description: 관련 Issue·PR·문서 링크가 있으면 적습니다.

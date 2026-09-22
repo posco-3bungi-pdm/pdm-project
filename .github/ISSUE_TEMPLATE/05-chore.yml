@@ -1,0 +1,31 @@
+name: 환경·설정 변경
+description: 패키지·CI·git 설정·공유 파일처럼 팀원 모두의 환경에 영향을 주는 변경을 등록합니다.
+title: '[설정] '
+labels: ['type: task']
+body:
+  - type: textarea
+    id: change
+    attributes:
+      label: 바꿀 것과 이유
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: 바뀌는 파일
+      placeholder: 예) requirements.txt, .gitattributes, .github/workflows/ci.yml
+    validations:
+      required: true
+  - type: textarea
+    id: after_merge
+    attributes:
+      label: 머지 후 팀원이 해야 할 일
+      description: 없으면 없음이라고 적습니다.
+      placeholder: 예) git pull origin main 후 python -m nbstripout --install 다시 실행
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: 확인 방법
+      description: 바뀐 설정이 제대로 적용됐는지 확인하는 명령이나 화면을 적습니다.

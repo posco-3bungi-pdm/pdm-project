@@ -1,7 +1,7 @@
-name: 분석 실험
-description: 비교 조건과 판단 근거가 남는 실험을 등록합니다.
+name: 모델링 실험
+description: 비교 조건과 판단 근거가 남는 모델링·분석 실험을 등록합니다.
 title: '[실험] '
-labels: ['type: experiment']
+labels: ['type: experiment', 'stage: model']
 body:
   - type: textarea
     id: question

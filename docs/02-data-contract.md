@@ -79,7 +79,7 @@
 
 온도 데이터의 구간 식별자는 `LOT_NO`, 이벤트·정비의 설비 식별자는 `PLANT_CD`입니다. LOT 번호가 곧 강종이나 코일 번호를 뜻하는지는 확인되지 않았습니다.
 
-근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb), [01_eda_4_event_overlap — 이벤트·정비](../notebooks/01_eda_4_event_overlap.ipynb).
+근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb), [01_eda_4_event_overlap — 이벤트·정비](https://github.com/posco-3bungi-pdm/pdm-project/blob/7c53118d760ee8706bf34f7dc0dbd67549c8c286/notebooks/01_eda_4_event_overlap.ipynb).
 
 **왜 확인하는가**
 
@@ -138,7 +138,7 @@
 
 CR1 정비는 2024-06-10 ~ 06-14, 2024-11-05 ~ 11-10입니다. 이벤트 120건은 관측 구간 포함 기준의 미매칭이며, 기록 오류를 뜻하지 않습니다.
 
-근거: [01_eda_4_event_overlap — 이벤트·정비](../notebooks/01_eda_4_event_overlap.ipynb)와 로컬 CSV의 CR1·LOT 구간 대조.
+근거: [01_eda_4_event_overlap — 이벤트·정비](https://github.com/posco-3bungi-pdm/pdm-project/blob/7c53118d760ee8706bf34f7dc0dbd67549c8c286/notebooks/01_eda_4_event_overlap.ipynb)와 로컬 CSV의 CR1·LOT 구간 대조.
 
 **왜 확인하는가**
 

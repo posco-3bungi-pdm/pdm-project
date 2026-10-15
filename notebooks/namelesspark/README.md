@@ -27,7 +27,7 @@
 
 읽는 순서는 01 → 02 → 03 → 04 → 05 → 06 → 07임. 실행할 때 이전 노트북의 메모리를 이어받는 것은 아님. 01~06은 원본과 공통 함수로 독립 실행하며, 07만 05·06의 저장 결과를 읽음.
 
-PR #63은 이미 #72로 대체되어 닫힌 과거안임. 이번 #74 브랜치에는 #72의 03·04·06에 해당하는 작업도 포함됐으므로 새 PR에서 함께 검토하고 중복 병합하지 않음. #71의 시각화·파생변수와 #74의 모델링 완료 기준은 따로 봐야 함.
+PR #63은 이미 #72로 대체되어 닫힌 과거안임. 현재 통합 검토는 [Draft PR #78](https://github.com/posco-3bungi-pdm/pdm-project/pull/78)에서 진행함. #72의 비교·파생 작업도 03·04·06에 포함되어 있어 중복 병합하지 않음. #71의 시각화·파생변수와 #74의 모델링 완료 기준은 따로 봐야 함.
 
 ## 역할을 나눈 기준
 
@@ -88,7 +88,7 @@ PR #63은 이미 #72로 대체되어 닫힌 과거안임. 이번 #74 브랜치�
 
 원본 기준표는 공유하고 정답 y의 정의만 분리함. 동일한 큰 CSV를 분류·회귀 폴더에 복제하지 않음.
 
-- `classification/v1/dataset.json`: 입력 67개와 LABEL 정의. Z-score·IsolationForest·RandomForestClassifier가 같은 평가 행을 비교할 때 사용함. Z-score·IF의 fit에 LABEL을 넣지 않음.
+- `classification/v1/dataset.json`: 기존 RF 입력 후보 67개와 LABEL 정의. Z-score·IF 입력은 아직 미정이며 `method_input_columns`에 null로 표시함. 같은 기준표·평가 행을 공유하는 것과 같은 X를 쓰는 것은 다름. 근거 텍스트는 인코딩 여부와 관계없이 입력에서 제외하며 Z-score·IF의 fit에 LABEL을 넣지 않음.
 - `regression/v1/dataset.json`: 같은 기준표를 참조함. 목표 센서·몇 초 뒤를 예측할지 아직 미정임. `regression_inputs()`는 정한 뒤 같은 LOT의 정확한 미래 시각을 연결하고 사용자 제외·분할 경계를 넘는 정답을 뺌.
 - LABEL·라벨 근거·사후 정비·부품교체·후보 플래그는 X가 아님. 문자열이어도 인코딩하면 입력될 수 있으니 컬럼 허용목록으로 차단함.
 
@@ -103,6 +103,8 @@ assert sha256(path) == contract['master_sha256']
 master = pd.read_csv(path, encoding='utf-8-sig', parse_dates=['MEAS_DT'], dtype={'LABEL': 'Int8'})
 X, y, row_keys = classification_inputs(master, contract['input_columns'])
 ```
+
+Z-score의 대상 컬럼·강종별 비교 집단·문턱은 아직 정하지 않았음. 학습 표준편차가 0인 컬럼의 처리도 정해야 함. 수치 컬럼이라는 이유로 적절한 점수 입력이라고 단정하지 않음. IF의 입력 선택도 별도 검토가 남아 있음.
 
 시간·LOT로 학습/검증/시험을 먼저 나눈 뒤, 학습 부분에만 정상:이상 9:1을 적용하면 됨. Z-score 통계와 IF도 학습 구간에서만 맞춤. 시험 분포는 유지함. 아직 분할·언더샘플링·오버샘플링·모델 학습은 하지 않았음. 이 라벨로 얻은 성능은 우선 임시 규칙 재현 정도이며 실제 고장 탐지 성능으로 단정하지 않음.
 

@@ -79,7 +79,7 @@
 
 온도 데이터의 구간 식별자는 `LOT_NO`, 이벤트·정비의 설비 식별자는 `PLANT_CD`입니다. LOT 번호가 곧 강종이나 코일 번호를 뜻하는지는 확인되지 않았습니다.
 
-근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb), [01_eda_4_event_overlap — 이벤트·정비](../notebooks/01_eda_4_event_overlap.ipynb).
+근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb), [설비·LOT·강종 연결 — 이벤트·정비](../notebooks/namelesspark/01_data_alignment.ipynb).
 
 **왜 확인하는가**
 
@@ -138,13 +138,13 @@
 
 CR1 정비는 2024-06-10 ~ 06-14, 2024-11-05 ~ 11-10입니다. 이벤트 120건은 관측 구간 포함 기준의 미매칭이며, 기록 오류를 뜻하지 않습니다.
 
-근거: [01_eda_4_event_overlap — 이벤트·정비](../notebooks/01_eda_4_event_overlap.ipynb)와 로컬 CSV의 CR1·LOT 구간 대조.
+근거: [설비·LOT·강종 연결 — 이벤트·정비](../notebooks/namelesspark/01_data_alignment.ipynb)와 로컬 CSV의 CR1·LOT 구간 대조.
 
 **왜 확인하는가**
 
 운영 변화와 센서 변화를 연결하기 위해 조인합니다. 이벤트에는 LOT 키가 없으므로 CR1 조건 적용 후 이벤트 시각과 LOT 시작·끝을 비교합니다. 정비는 기간 겹침으로 대조합니다. 전체 날짜 범위 겹침만으로 센서 전후 비교가 가능하다고 판단하지 않습니다.
 
-현재 집계는 양끝 포함 비교이며 정비 날짜는 자정으로 해석했습니다. 실제 시각·종료일 포함 규칙은 추가 확인 대상입니다. CR1 정비 종료일 당일에도 LOT가 없어 이 차이는 중첩 0건 결과에 영향을 주지 않습니다. 전체 정비 기간 끝은 `01_eda_4_event_overlap`의 `STRT_DT.max()`가 아니라 `END_DT.max()`로 확인해야 합니다.
+현재 집계는 양끝 포함 비교이며 정비 날짜는 자정으로 해석했습니다. 실제 시각·종료일 포함 규칙은 추가 확인 대상입니다. CR1 정비 종료일 당일에도 LOT가 없어 이 차이는 중첩 0건 결과에 영향을 주지 않습니다. 전체 정비 기간 끝은 `END_DT.max()`로 확인하며, 정리한 설비·LOT 연결 노트북에 반영했습니다.
 
 **이어지는 질문과 검증 방법**
 

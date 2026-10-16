@@ -19,3 +19,5 @@ P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니�
 현재 개인 노트북은 배포 CSV 7개를 `data/` 바로 아래에서 읽음. 가공 결과의 공통 기준은 `processed/cal01_base_v1.csv`이며 전체 원본 345,390행을 보존함. 임시 0·1과 사용자 제외 상태를 분리하고 분류·회귀는 같은 기준표를 참조함.
 
 폴더 구조, 라벨 의미, 모델 입력 컬럼, 실행 순서는 [namelesspark 분석 흐름](../notebooks/namelesspark/README.md)에 정리함. `processed/archive/`는 철회·과거 계산 기록이며 현재 학습 기준이 아님.
+
+[08번](../notebooks/namelesspark/08_zscore_dataframe.ipynb)은 `processed/classification/zscore/v1/`에 원값 비교 후보 `X.csv`와 같은 행 순서의 `row_context.csv`, 해시·입력 정의 `dataset.json`을 만듦. X에는 수치 8개만 들어가며 강종·LOT·시각·임시 라벨은 문맥 표에 둠. 점수 계산과 모델 학습은 하지 않음.

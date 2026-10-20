@@ -20,7 +20,7 @@
 
 온도 데이터는 **14개 LOT 전체를 합친 345,390행·24열**입니다. 한 행은 특정 LOT의 한 시점에 기록된 센서·제어값 묶음이며, `LOT_NO`는 해당 행이 14개 LOT 중 어느 LOT에 속하는지 나타냅니다. LOT별 관측 지속 시간은 평균 약 423.6분, 최단 74.6분, 최장 812.6분입니다.
 
-근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb).
+근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/sayletskin/01_eda_3_lot_segments.ipynb).
 
 **왜 확인하는가**
 
@@ -54,7 +54,7 @@
 | 10초 | 1 | 0.0003% |
 | 11초 | 3 | 0.0009% |
 
-근거: [01_eda_1_sampling_interval — 측정 간격](../notebooks/01_eda_1_sampling_interval.ipynb), [01_eda_2_time_range_gaps — 기간·공백](../notebooks/01_eda_2_time_range_gaps.ipynb).
+근거: [01_eda_1_sampling_interval — 측정 간격](../notebooks/jinny/01_eda_1_sampling_interval.ipynb), [01_eda_2_time_range_gaps — 기간·공백](../notebooks/IWEasdwe1234/01_eda_2_time_range_gaps.ipynb).
 
 **왜 확인하는가**
 
@@ -79,7 +79,7 @@
 
 온도 데이터의 구간 식별자는 `LOT_NO`, 이벤트·정비의 설비 식별자는 `PLANT_CD`입니다. LOT 번호가 곧 강종이나 코일 번호를 뜻하는지는 확인되지 않았습니다.
 
-근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/01_eda_3_lot_segments.ipynb), [설비·LOT·강종 연결 — 이벤트·정비](../notebooks/namelesspark/01_data_alignment.ipynb).
+근거: [01_eda_3_lot_segments — LOT 구간](../notebooks/sayletskin/01_eda_3_lot_segments.ipynb), [설비·LOT·강종 연결 — 이벤트·정비](../notebooks/namelesspark/01_data_alignment.ipynb).
 
 **왜 확인하는가**
 
@@ -106,7 +106,7 @@
 | 완전 중복 행·중복 시각 | 각각 0건 |
 | 노트북 기본 범위 조회 | `TC-Z1`~`TC-Z6` 대상 |
 
-근거: [01_eda_5_missing_constant — 결측·상수·중복](../notebooks/01_eda_5_missing_constant.ipynb).
+근거: [01_eda_5_missing_constant — 결측·상수·중복](../notebooks/yujin/01_eda_5_missing_constant.ipynb).
 
 **왜 확인하는가**
 

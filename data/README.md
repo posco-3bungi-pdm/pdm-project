@@ -13,3 +13,25 @@
 | 분석 단위 | 코일·버스트·세션 등 독립 표본 정의 |
 
 P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니다. 데이터 사전의 특징 정의를 확인한 후 사용합니다. 실제 프로젝트의 재현 명령은 README에 추가합니다.
+
+## 폴더 구성
+
+| 폴더 | 내용 | 만드는 곳 |
+| --- | --- | --- |
+| `data/` 또는 `data/raw/` | 원본 CSV 8개 | 배포 자료를 복사 |
+| `data/labels/` | 팀 검토 표 `domain_decisions.csv` | 팀이 직접 관리 (아래 참고) |
+| `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v5.csv` | `notebooks/namelesspark/06` ~ `10` |
+| `data/processed/model_results/` | 모델 비교 결과 | `notebooks/sayletskin/03` |
+
+## 팀 검토 표 `data/labels/domain_decisions.csv`
+
+| 컬럼 | 뜻 |
+| --- | --- |
+| `DECISION_ID` | 검토 번호 (C: 공통 움직임, E: LOT 종료부, P: 제안) |
+| `VERSION` | 이 검토를 처음 쓰는 데이터 버전 (v2, v3, v6) |
+| `LOT_NO`, `SENSOR` | 대상 LOT과 센서 |
+| `START`, `END` | 대상 시간 (끝 포함) |
+| `DOMAIN_LABEL` | 0: 후보 해제, 1: 이상으로 확정 |
+| `REASON`, `SOURCE` | 판단 이유와 출처 |
+
+- CI가 CSV 커밋을 막으므로 이 표도 원본처럼 팀 공유 경로로 주고받습니다.

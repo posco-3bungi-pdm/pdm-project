@@ -7,7 +7,7 @@
 | 1 | [namelesspark/01](namelesspark/01_data_alignment.ipynb) ~ [05](namelesspark/05_interval_review.ipynb) | 데이터 연결, 정비, LOT, 강종, 구간 탐색 | 그림 |
 | 2 | [namelesspark/06](namelesspark/06_cal01_base_v1.ipynb) | 원기록 + 통계 후보 | `cal01_base_v1.csv` |
 | 3 | [namelesspark/07](namelesspark/07_cal01_base_v2.ipynb) | v1 + 공통 움직임 해제 | `cal01_base_v2.csv` |
-| 4 | [namelesspark/08](namelesspark/08_cal01_base_v3.ipynb) | v2 + LOT 종료부 해제 | `cal01_base_v3.csv` |
+| 4 | [namelesspark/08](namelesspark/08_cal01_base_v3.ipynb) | v2 + 새로 찾은 공통 움직임 해제 | `cal01_base_v3.csv` |
 | 5 | [namelesspark/09](namelesspark/09_cal01_base_v4.ipynb) | v2를 1분으로 묶음 | `cal01_base_v4.csv` |
 | 6 | [namelesspark/10](namelesspark/10_cal01_base_v5.ipynb) | v3를 1분으로 묶음 | `cal01_base_v5.csv` |
 | 7 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
@@ -22,7 +22,7 @@
 | --- | --- | --- | --- |
 | v1 | 원기록 (1초) | 같은 LOT 기준 \|Z\| > 3 | 없음 |
 | v2 | 원기록 (1초) | v1과 같음 | 공통 움직임 검토로 해제한 곳 0 |
-| v3 | 원기록 (1초) | v1과 같음 | v2 + LOT 종료부 검토로 해제한 곳 0 |
+| v3 | 원기록 (1초) | v1과 같음 | v2 + 새로 찾은 공통 움직임 해제 0 |
 | v4 | 1분 | 1분 안에 후보가 하나라도 있으면 1 | v2를 1분으로 묶음 |
 | v5 | 1분 | v4와 같음 | v3를 1분으로 묶음 |
 

@@ -10,13 +10,14 @@
 | 4 | [namelesspark/08](namelesspark/08_cal01_base_v3.ipynb) | v2 + 새로 찾은 공통 움직임 해제 | `cal01_base_v3.csv` |
 | 5 | [namelesspark/09](namelesspark/09_cal01_base_v4.ipynb) | v2를 1분으로 묶음 | `cal01_base_v4.csv` |
 | 6 | [namelesspark/10](namelesspark/10_cal01_base_v5.ipynb) | v3를 1분으로 묶음 | `cal01_base_v5.csv` |
-| 7 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
-| 8 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표 | 없음 (화면 표) |
+| 7 | [namelesspark/11](namelesspark/11_cal01_base_v6.ipynb) | v3 + 팀 판단을 1분으로 묶음 | `cal01_base_v6.csv` |
+| 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
+| 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
 
-- 06 ~ 10은 위 순서대로 한 번만 실행하면 됨 (07, 08은 v1을, 09는 v2를, 10은 v3를 읽음)
+- 06 ~ 11은 위 순서대로 한 번만 실행하면 됨 (07, 08, 11은 v1을, 09는 v2를, 10은 v3를 읽음. 11은 마지막에 v5와 비교하므로 10 다음에 실행)
 - 03은 첫 셀의 `DATA_FILE`, `ZONE`만 바꿔서 여러 번 실행함
 
-## v1 ~ v5 차이
+## v1 ~ v6 차이
 
 | 버전 | 단위 | STAT_LABEL | DOMAIN_LABEL |
 | --- | --- | --- | --- |
@@ -25,6 +26,7 @@
 | v3 | 원기록 (1초) | v1과 같음 | v2 + 새로 찾은 공통 움직임 해제 0 |
 | v4 | 1분 | 1분 안에 후보가 하나라도 있으면 1 | v2를 1분으로 묶음 |
 | v5 | 1분 | v4와 같음 | v3를 1분으로 묶음 |
+| v6 | 1분 | v4와 같음 | v3 + 팀 판단(1, 0)을 1분으로 묶음 |
 
 - `LABEL`은 CSV에 없음. 모델 노트북에서 `DOMAIN_LABEL`이 있으면 그 값, 없으면 `STAT_LABEL`로 만듦
 - 팀 검토 내용은 `data/labels/domain_decisions.csv` 한 곳에 모음 (LOT, 센서, 시작, 끝, 0 또는 1, 이유)
@@ -47,7 +49,7 @@ for step in range(2):
 DATA_DIR = os.path.join(ROOT, "data")                    # 원본 CSV 8개
 if os.path.isfile(os.path.join(DATA_DIR, "raw", "T-CR1-CAL01_온도.csv")):
     DATA_DIR = os.path.join(DATA_DIR, "raw")             # data/raw에 두었으면 그 폴더를 씀
-PROCESSED_DIR = os.path.join(ROOT, "data", "processed")  # 만든 CSV (cal01_base_v1 ~ v5)
+PROCESSED_DIR = os.path.join(ROOT, "data", "processed")  # 만든 CSV (cal01_base_v1 ~ v6)
 LABEL_DIR = os.path.join(ROOT, "data", "labels")         # 팀 검토 표 (domain_decisions.csv)
 FIG_DIR = os.path.join(ROOT, "figures")                  # 그림
 ENC = "utf-8-sig"

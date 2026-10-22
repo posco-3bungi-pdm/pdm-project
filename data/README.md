@@ -20,15 +20,15 @@ P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니�
 | --- | --- | --- |
 | `data/` 또는 `data/raw/` | 원본 CSV 8개 | 배포 자료를 복사 |
 | `data/labels/` | 팀 검토 표 `domain_decisions.csv` | 팀이 직접 관리 (아래 참고) |
-| `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v5.csv` | `notebooks/namelesspark/06` ~ `10` |
+| `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v6.csv` | `notebooks/namelesspark/06` ~ `11` |
 | `data/processed/model_results/` | 모델 비교 결과 | `notebooks/sayletskin/03` |
 
 ## 팀 검토 표 `data/labels/domain_decisions.csv`
 
 | 컬럼 | 뜻 |
 | --- | --- |
-| `DECISION_ID` | 검토 번호 (C: 공통 움직임, E: 새로 찾은 공통 움직임, P: 제안) |
-| `VERSION` | 이 검토를 처음 쓰는 데이터 버전 (v2, v3, v6) |
+| `DECISION_ID` | 검토 번호 (C: 공통 움직임, E: 새로 찾은 공통 움직임, T: 팀 판단, P, N: 제안) |
+| `VERSION` | 이 검토를 처음 쓰는 데이터 버전 (v2, v3, v6). `v6_보류`, `v6_제안`은 노트북에서 쓰지 않음 |
 | `LOT_NO`, `SENSOR` | 대상 LOT과 센서 |
 | `START`, `END` | 대상 시간 (끝 포함) |
 | `DOMAIN_LABEL` | 0: 후보 해제, 1: 이상으로 확정 |

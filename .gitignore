@@ -32,7 +32,8 @@ data/*
 
 # Temporary exports and model runs
 outputs/
-models/
+models/*
+!models/README.md
 mlruns/
 wandb/
 *.log

@@ -13,9 +13,11 @@
 | 7 | [namelesspark/11](namelesspark/11_cal01_base_v6.ipynb) | v3 + 팀 판단을 1분으로 묶음 | `cal01_base_v6.csv` |
 | 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
 | 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
+| 10 | [sayletskin/05](sayletskin/05_save_models.ipynb) | 관제용 모델 저장 (구역 하나씩, 03 결과가 있어야 함) | `models/<라벨 버전>/<입력 태그>/<구역>/`, `models/registry.json` |
 
 - 06 ~ 11은 위 순서대로 한 번만 실행하면 됨 (07, 08, 11은 v1을, 09는 v2를, 10은 v3를 읽음. 11은 마지막에 v5와 비교하므로 10 다음에 실행)
 - 03은 첫 셀의 `DATA_FILE`, `ZONE`만 바꿔서 여러 번 실행함
+- 05는 03과 같은 `DATA_FILE`, `ZONE`, `USE_` 값으로 실행함. 모델 파일은 git에 올리지 않고 `models/README.md`대로 관제 저장소로 옮김
 - 03의 v6 입력은 기본 + 공통 움직임(`USE_COMMON`) + 10분 이동통계(`USE_ROLL10`) + 지난 값 Z(`USE_ZPAST`) + OP 공통 움직임(`USE_OPCOMMON`) + 로 전체 동시 이상(`USE_FURNACE`) + 제어 어긋남(`USE_CONTROL`). 포화비율, 경과시간, 변화율 스위치는 실험 기록용으로 꺼 둠. v1 ~ v5 결과를 다시 만들 때는 `USE_`를 모두 False로 (결과 이름 끝에 켠 묶음이 붙음)
 
 ## v1 ~ v6 차이

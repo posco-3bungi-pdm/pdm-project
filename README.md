@@ -8,22 +8,32 @@
 [![CI](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml/badge.svg)](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml)
 [![관제 CAL01 Monitor](https://img.shields.io/badge/%EA%B4%80%EC%A0%9C-CAL01%20Monitor-a8ff3e?style=flat-square&logo=render&logoColor=white&labelColor=0b0f0c)](https://cal01-monitor.onrender.com/)
 [![공동 검토 cal01-review](https://img.shields.io/badge/%EA%B3%B5%EB%8F%99%20%EA%B2%80%ED%86%A0-cal01--review-ffb347?style=flat-square&logo=render&logoColor=white&labelColor=0b0f0c)](https://cal01-review.onrender.com/)
-[![정답 v7](https://img.shields.io/badge/%EC%A0%95%EB%8B%B5-v7-5ec8ff?style=flat-square&labelColor=0b0f0c)](#정답을-일곱-번-다듬었습니다-v1--v7)
+[![정답 v7](https://img.shields.io/badge/%EC%A0%95%EB%8B%B5-v7-5ec8ff?style=flat-square&labelColor=0b0f0c)](#정답을-일곱-번-다듬음-v1--v7)
 
 [작업 목록](https://github.com/posco-3bungi-pdm/pdm-project/issues) · [Pull requests](https://github.com/posco-3bungi-pdm/pdm-project/pulls) · [프로젝트 보드](https://github.com/orgs/posco-3bungi-pdm/projects/1) · [협업 안내](CONTRIBUTING.md) · [노트북 순서](notebooks/README.md) · [데이터 준비](data/README.md)
 
 </div>
 
-포스코 K-뉴딜 아카데미 3조 **오운완**의 설비 고장 예측 프로젝트입니다. 연속 소둔로(CAL01) 한 대의 2024년 센서 기록에서 이상 후보를 찾고, 팀이 함께 판단한 정답으로 모델을 시험한 뒤, 그 결과를 관제 화면까지 이어 붙였습니다. 데이터는 교육용 재현 데이터이며 실제 조업 데이터가 아닙니다.
+포스코 K-뉴딜 아카데미 3조 **오운완**의 설비 고장 예측 프로젝트임. 연속 소둔로(CAL01) 한 대의 2024년 센서 기록에서 이상 후보를 찾고, 팀이 함께 판단한 정답으로 모델을 시험한 뒤, 그 결과를 관제 화면까지 이어 붙임. 데이터는 교육용 재현 데이터이며 실제 조업 데이터가 아님.
 
 ## 바로 보기
 
-| 관제 · CAL01 Monitor | 공동 검토 · cal01-review |
-| --- | --- |
-| 3D 소둔로 위에서 채널 위치를 고르고, Z-score 경보와 그래프, 현장 요청을 한 화면에서 봅니다 | 3σ 후보와 모델 후보를 LOT 그래프 위에 띄워 팀원이 1, 0, 보류를 남깁니다. 판단은 검토 표가 되어 다음 정답으로 돌아옵니다 |
-| [cal01-monitor.onrender.com](https://cal01-monitor.onrender.com/) · 저장소 `posco-3bungi-pdm/cal01-monitor` | [cal01-review.onrender.com](https://cal01-review.onrender.com/) · 저장소 `posco-3bungi-pdm/cal01-review` |
+<table>
+<tr>
+<th width="50%">관제 · CAL01 Monitor</th>
+<th width="50%">공동 검토 · cal01-review</th>
+</tr>
+<tr>
+<td><img alt="관제 화면: 3D 소둔로, 홀로그램, 기록 재생, 구역 확대, 채널 그래프, 과거 LOT 이상 후보, 팀 확인 요청" src="figures/readme/monitor.gif" width="100%"></td>
+<td><img alt="검토 화면: LOT 고르기, 후보 목록과 그래프, 판단 메모, 채널 선택, 팀원 기록, LOT 나란히 비교" src="figures/readme/review.gif" width="100%"></td>
+</tr>
+<tr>
+<td>3D 소둔로 위에서 구역을 고르고, 기록을 재생하며 Z-score 경보·채널 그래프·현장 요청을 한 화면에서 봄<br><a href="https://cal01-monitor.onrender.com/">cal01-monitor.onrender.com</a> · 저장소 <code>posco-3bungi-pdm/cal01-monitor</code></td>
+<td>3σ 후보와 모델 후보를 LOT 그래프 위에 띄워 팀원이 1, 0, 보류를 남김. 판단은 검토 표가 되어 다음 정답으로 돌아옴<br><a href="https://cal01-review.onrender.com/">cal01-review.onrender.com</a> · 저장소 <code>posco-3bungi-pdm/cal01-review</code></td>
+</tr>
+</table>
 
-두 사이트 모두 팀 계정으로 들어갑니다. 무료 서버라 15분 동안 쓰지 않으면 잠들고, 다시 열 때 1분쯤 걸립니다.
+두 사이트 모두 팀 계정으로 들어감. 무료 서버라 15분 동안 쓰지 않으면 잠들고, 다시 열 때 1분쯤 걸림.
 
 ## 숫자로 보는 프로젝트
 
@@ -52,7 +62,7 @@
 
 ## 데이터: 연속 소둔로 한 줄 흐름
 
-강판은 세정 → 건조 → 예열 → 가열 → 균열 → 과시효 → 서냉 → 냉각 순으로 지나갑니다. 구역마다 온도(TC)와 가열 출력(OP)을 1초마다 기록하고, Z4에는 로 안 가스 분위기(CP)도 있습니다.
+강판은 세정 → 건조 → 예열 → 가열 → 균열 → 과시효 → 서냉 → 냉각 순으로 지나감. 구역마다 온도(TC)와 가열 출력(OP)을 1초마다 기록하고, Z4에는 로 안 가스 분위기(CP)도 있음.
 
 | 구역 | 역할 | 센서 | 특징 |
 | --- | --- | --- | --- |
@@ -76,13 +86,13 @@
 | 058 | DP590 | 6/9 | 154 | 121 | SPCE | 11/24 | 652 |
 | 061 | SPHC | 6/15 | 140 | 133 | SPCE | 12/28 | 108 |
 
-앞 4개 LOT(001, 024, 037, 038)은 학습에만 쓰고, 나머지 10개가 시험 LOT입니다.
+앞 4개 LOT(001, 024, 037, 038)은 학습에만 쓰고, 나머지 10개가 시험 LOT임.
 
 </details>
 
-센서 기록 옆에 조업 이벤트(강종 변경), 정비 이력, 부품 교체 이력, 정기 수리 달력을 같이 둡니다. 정지와 승온 구간을 제외할 때, 그리고 이상이 정비와 이어지는지 볼 때 씁니다.
+센서 기록 옆에 조업 이벤트(강종 변경), 정비 이력, 부품 교체 이력, 정기 수리 달력을 같이 둠. 정지와 승온 구간을 제외할 때, 그리고 이상이 정비와 이어지는지 볼 때 씀.
 
-## 정답을 일곱 번 다듬었습니다 (v1 → v7)
+## 정답을 일곱 번 다듬음 (v1 → v7)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/readme/labels-dark.svg">
@@ -97,9 +107,9 @@
 | v6 | 1분 | v5 + 팀 판단 T 29건 (1은 14건) + 전 구역 검토 S 80건 (모두 0) | 11 |
 | v7 | 1분 | v6 + 모델 후보 M 60건 판단 + 규칙 2개 | 12, 13 |
 
-모델이 맞혀야 하는 정답은 **팀 판단이 있으면 팀 판단, 없으면 통계 후보**입니다. 검토 내용은 `data/labels/domain_decisions.csv` 한 곳에 모읍니다(CSV라 저장소에는 없고 팀 공유 경로로 주고받음).
+모델이 맞혀야 하는 정답은 **팀 판단이 있으면 팀 판단, 없으면 통계 후보**임. 검토 내용은 `data/labels/domain_decisions.csv` 한 곳에 모음(CSV라 저장소에는 없고 팀 공유 경로로 주고받음).
 
-v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제어)을 전 구역에 같은 기준으로 적용한 것입니다.
+v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제어)을 전 구역에 같은 기준으로 적용한 것임.
 
 | 규칙 | 뜻 | 근거 |
 | --- | --- | --- |
@@ -108,7 +118,7 @@ v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제
 
 ## 모델에 넣는 입력 (묶음 7개)
 
-모든 값은 같은 LOT 안에서 지금보다 앞선 분의 값만 씁니다. 미래 값은 입력에도 통계에도 쓰지 않습니다.
+모든 값은 같은 LOT 안에서 지금보다 앞선 분의 값만 씀. 미래 값은 입력에도 통계에도 쓰지 않음.
 
 | 묶음 | 쉬운 뜻 | 03 스위치 |
 | --- | --- | --- |
@@ -120,7 +130,7 @@ v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제
 | 로 전체 동시 이상 | Z1 ~ Z8 중 내 구역 말고 최근 5분 안에 3σ 넘은 구역 수 | `USE_FURNACE` |
 | 제어 어긋남 | 최근 5분 동안 온도와 출력이 같은 방향으로 움직인 비율 (정상 제어면 반대 방향) | `USE_CONTROL` |
 
-포화비율, 경과시간, 변화율, 강종 계열 컬럼 5묶음도 실험했지만 여러 구역에서 함께 좋아지지 않아 꺼 두었습니다.
+포화비율, 경과시간, 변화율, 강종 계열 컬럼 5묶음도 실험했지만 여러 구역에서 함께 좋아지지 않아 꺼 둠.
 
 ## 모델 설계: 시간 순서를 지키는 시험
 
@@ -136,7 +146,7 @@ v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제
 | IsolationForest | 정답 없이 평소와 다른 분을 찾음 (비지도) | F1로는 불리. 후보 뽑기와 팀 판단 대조에 씀 |
 | RandomForest | 정답(통계 후보 + 팀 판단)을 배워 따라 함 (지도) | 팀 판단이 있는 구역에서 Z-score를 넘으면 "팀 판단을 배웠다"는 뜻 |
 
-RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_state=42` 고정입니다. 구역마다 모델을 따로 만들고, 저장할 때는 `cal01-<정답 버전>-<입력 태그>-<구역>-<모델>-<학습 범위>-<날짜>` 이름으로 레지스트리에 적습니다.
+RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_state=42` 고정임. 구역마다 모델을 따로 만들고, 저장할 때는 `cal01-<정답 버전>-<입력 태그>-<구역>-<모델>-<학습 범위>-<날짜>` 이름으로 레지스트리에 적음.
 
 <details>
 <summary>발표 자료의 모델 설계 장면 (모핑)</summary>
@@ -147,7 +157,7 @@ RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_sta
 
 ## 결과
 
-점수는 "팀이 다듬은 정답을 모델이 얼마나 재현하나"입니다. 실제 고장을 예측한 성능이 아닙니다.
+점수는 "팀이 다듬은 정답을 모델이 얼마나 재현하나"임. 실제 고장을 예측한 성능이 아님.
 
 ### 구역별
 
@@ -168,7 +178,7 @@ RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_sta
 
 ### 시험 LOT별
 
-구역 합산 F1과 함께, LOT 하나를 시험했을 때의 점수도 봅니다. LOT의 F1은 그 LOT에 정답 1이 있는 구역들의 F1 평균이고, 전체는 그 평균의 평균입니다.
+구역 합산 F1과 함께, LOT 하나를 시험했을 때의 점수도 봄. LOT의 F1은 그 LOT에 정답 1이 있는 구역들의 F1 평균이고, 전체는 그 평균의 평균임.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/readme/lot_f1-dark.png">
@@ -179,7 +189,7 @@ RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_sta
 | --- | --- | --- | --- |
 | 평균의 평균 (시험 LOT 10개) | 0.302 | 0.212 | 0.266 |
 
-정답 1이 2 ~ 3분뿐인 LOT(044, 133)과 구역(Z6 8분, Z1 12분)이 Z4(165분)와 같은 무게로 들어가므로 평균의 평균은 낮게 나옵니다. 어느 칸이 비었는지는 아래 그림이 보여 줍니다.
+정답 1이 2 ~ 3분뿐인 LOT(044, 133)과 구역(Z6 8분, Z1 12분)이 Z4(165분)와 같은 무게로 들어가므로 평균의 평균은 낮게 나옴. 어느 칸이 비었는지는 아래 그림이 보여 줌.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/readme/heatmap-dark.png">
@@ -202,15 +212,15 @@ RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_sta
 | 121 | 26 | 0.50 | 0.06 | **0.63** |
 | 133 | 2 | 0 | 0 | 0 |
 
-RandomForest가 10개 중 5개 LOT에서 1등, IsolationForest 2개, Z-score 1개. 정답 1이 1 ~ 2분뿐인 LOT에서는 어느 모델도 점수가 나오지 않습니다.
+RandomForest가 10개 중 5개 LOT에서 1등, IsolationForest 2개, Z-score 1개. 정답 1이 1 ~ 2분뿐인 LOT에서는 어느 모델도 점수가 안 나옴.
 
 </details>
 
 **배운 것**
 
-- 점수를 올린 것은 컬럼이 아니라 정답이었습니다. 공통 움직임을 해제하고 팀 판단을 넣은 Z3 ~ Z6에서만 RandomForest가 Z-score를 넘었습니다.
-- 통계 후보(3σ) 1의 대부분은 출력 움직임이거나 0.3℃ 튐이었습니다. 규칙으로 걷어 내자 Z2, Z7, Z8에는 이상이 남지 않았고, Z3 ~ Z6의 이전 점수가 출력 움직임을 맞힌 몫이었음이 드러났습니다.
-- 모델 설정(나무 깊이, 문턱, 지연 입력)이나 모델 교체(HistGradientBoosting)로는 ±0.03 안에서만 움직였습니다. 팀이 확정한 이상이 없는 구역은 F1 대신 헛경보 수로 말합니다.
+- 점수를 올린 것은 컬럼이 아니라 정답이었음. 공통 움직임을 해제하고 팀 판단을 넣은 Z3 ~ Z6에서만 RandomForest가 Z-score를 넘음.
+- 통계 후보(3σ) 1의 대부분은 출력 움직임이거나 0.3℃ 튐이었음. 규칙으로 걷어 내자 Z2, Z7, Z8에는 이상이 남지 않았고, Z3 ~ Z6의 이전 점수가 출력 움직임을 맞힌 몫이었음이 드러남.
+- 모델 설정(나무 깊이, 문턱, 지연 입력)이나 모델 교체(HistGradientBoosting)로는 ±0.03 안에서만 움직임. 팀이 확정한 이상이 없는 구역은 F1 대신 헛경보 수로 말함.
 
 ## 데이터가 정비 기록과 만나는 곳
 
@@ -226,7 +236,7 @@ RandomForest가 10개 중 5개 LOT에서 1등, IsolationForest 2개, Z-score 1�
 | T09 | 037 (4/14) | 6시간 뒤 상태 점검 "확인 중" | 없음 |
 | T32 | 091 (9/9) | 2.5일 뒤 전기 BM 절연 저하 | 없음 |
 
-CP는 로 안 가스 분위기를 재는 센서라 밀봉(O링)과 CP 센서 자체(가스 분석계 셀)로 이어집니다. 다만 함께 나타났다는 뜻이지 원인을 증명한 것은 아닙니다.
+CP는 로 안 가스 분위기를 재는 센서라 밀봉(O링)과 CP 센서 자체(가스 분석계 셀)로 이어짐. 다만 함께 나타났다는 뜻이지 원인을 증명한 것은 아님.
 
 ## 다음에 할 일
 
@@ -237,7 +247,7 @@ CP는 로 안 가스 분위기를 재는 센서라 밀봉(O링)과 CP 센서 자
 
 ## 실행 방법
 
-Python 3.14 기준입니다. 저장소 루트에서 실행합니다.
+Python 3.14 기준임. 저장소 루트에서 실행함.
 
 ```powershell
 git clone https://github.com/posco-3bungi-pdm/pdm-project.git
@@ -249,7 +259,7 @@ py -3.14 -m venv .venv
 .\.venv\Scripts\python.exe .github/scripts/check_repository.py
 ```
 
-원본 CSV 8개를 `data/` 또는 `data/raw/`에, 검토 표를 `data/labels/domain_decisions.csv`에 둡니다([data/README.md](data/README.md)). 노트북은 `06 → 13` 순서로 한 번 실행해 정답 CSV를 만들고, `sayletskin/03`에서 `DATA_FILE`과 `ZONE`만 바꿔 모델을 비교합니다([notebooks/README.md](notebooks/README.md)). README 그림은 `figures/readme/make_readme_svg.py`, `make_readme_charts.py`로 다시 만듭니다.
+원본 CSV 8개를 `data/` 또는 `data/raw/`에, 검토 표를 `data/labels/domain_decisions.csv`에 둠([data/README.md](data/README.md)). 노트북은 `06 → 13` 순서로 한 번 실행해 정답 CSV를 만들고, `sayletskin/03`에서 `DATA_FILE`과 `ZONE`만 바꿔 모델을 비교함([notebooks/README.md](notebooks/README.md)). README 그림은 `figures/readme/make_readme_svg.py`, `make_readme_charts.py`로 다시 만듦.
 
 ```text
 .github/     Issue·PR 양식, 자동 검사와 자동 배정
@@ -265,10 +275,10 @@ src/, tests/ 재사용 코드와 테스트
 
 3조 오운완: 김태구(팀장), 김정렬, 박민호, 정수진, 황유진.
 
-**Issue → 작업 브랜치 → PR → CI → 동료 3명 승인 → Squash merge.** `main`은 함께 검토한 결과만 모으고, 원본 데이터·CSV·모델 파일·비밀값은 올리지 않습니다. 자세한 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md), 자동화는 [docs/automation.md](docs/automation.md)에 있습니다.
+**Issue → 작업 브랜치 → PR → CI → 동료 3명 승인 → Squash merge.** `main`은 함께 검토한 결과만 모으고, 원본 데이터·CSV·모델 파일·비밀값은 올리지 않음. 자세한 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md), 자동화는 [docs/automation.md](docs/automation.md)에 있음.
 
-- 행 수와 독립 표본 수를 구분하고, 분석 단위(LOT, 1분)를 먼저 정합니다.
-- 시간 순서로 나누고, 통계와 전처리는 지나간 값에만 적용합니다.
-- 단순 기준선(Z-score)과 모델을 같은 조건에서 비교합니다.
-- 팀이 확정한 정답이 없는 구역에서는 F1을 주장하지 않습니다.
-- 결과에는 판단 근거, 경계 사례, 헛경보 가능성, 현장 적용 한계를 함께 적습니다.
+- 행 수와 독립 표본 수를 구분하고, 분석 단위(LOT, 1분)를 먼저 정함.
+- 시간 순서로 나누고, 통계와 전처리는 지나간 값에만 적용함.
+- 단순 기준선(Z-score)과 모델을 같은 조건에서 비교함.
+- 팀이 확정한 정답이 없는 구역에서는 F1을 주장하지 않음.
+- 결과에는 판단 근거, 경계 사례, 헛경보 가능성, 현장 적용 한계를 함께 적음.

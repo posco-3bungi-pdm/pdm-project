@@ -111,6 +111,36 @@ def coin(t, cx, cy, r, fill, extra=""):
     return s
 
 
+def pipe(t, x1, x2, y, col, label="", dur=1.6):
+    """연결 관: 파인 홈 속을 빛 덩이가 지나가고 끝에 화살촉. label은 무엇이 흐르는지"""
+    s = inset(t, x1, y - 8, x2 - x1 - 10, 16, 8)
+    s += '<polygon points="%d,%d %d,%d %d,%d" fill="%s" filter="url(#shadow-sm)"/>\n' % (x2 - 14, y - 11, x2, y, x2 - 14, y + 11, col)
+    for begin in [0, dur / 2]:
+        s += ('<rect x="%d" y="%d" width="26" height="8" rx="4" fill="%s" filter="url(#glow)" opacity="0">'
+              '<animate attributeName="x" from="%d" to="%d" dur="%ss" begin="%ss" repeatCount="indefinite"/>'
+              '<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="%ss" begin="%ss" repeatCount="indefinite"/></rect>\n'
+              % (x1 + 2, y - 4, col, x1 + 2, x2 - 40, dur, begin, dur, begin))
+    if label:
+        s += text((x1 + x2) / 2 - 5, y - 16, label, 11, t["sub"], anchor="middle")
+    return s
+
+
+def curve_pipe(t, d, col, label="", lx=0, ly=0, dur=2.4):
+    """굽은 관: 홈 선 위로 캡슐이 경로(d)를 따라 감. 화살촉은 호출 쪽에서 붙임"""
+    s = '<path d="%s" fill="none" stroke="%s" stroke-opacity="%s" stroke-width="10" stroke-linecap="round"/>\n' % (d, t["lo"], t["lo_a"])
+    s += '<path d="%s" fill="none" stroke="%s" stroke-opacity="%s" stroke-width="3" stroke-linecap="round"/>\n' % (d, t["hi"], t["hi_a"])
+    s += '<path d="%s" fill="none" stroke="%s" stroke-opacity="0.35" stroke-width="2"/>\n' % (d, col)
+    s += ('<rect x="-14" y="-4" width="28" height="8" rx="4" fill="%s" filter="url(#glow)">'
+          '<animateMotion dur="%ss" repeatCount="indefinite" rotate="auto" path="%s"/></rect>\n' % (col, dur, d))
+    if label:
+        s += text(lx, ly, label, 11.5, col, "bold", "middle")
+    return s
+
+
+def up_arrow(t, x, y, col):
+    return '<polygon points="%d,%d %d,%d %d,%d" fill="%s" filter="url(#shadow-sm)"/>\n' % (x - 9, y + 10, x + 9, y + 10, x, y - 4, col)
+
+
 def pill(t, x, y, label, col, size=14):
     w = 26 + len(label) * size * 0.68
     s = raised(t, x, y, w, 36, 18, back=False, edge=col)
@@ -176,15 +206,15 @@ def hero(theme):
 # ---------------------------------------------------------------- 2. 세 저장소 흐름
 def flow(theme):
     t = THEMES[theme]
-    W, H = 1200, 340
+    W, H = 1200, 404
     s = head(W, H, t)
     s += layered_decor(t, 1120, 40, 150, t["cool"])
     s += emboss_text(t, 56, 48, "세 저장소가 한 흐름으로 이어짐", 20, t["ink"])
     cards = [("pdm-project", "분석 저장소", ["06 ~ 13 정답 만들기 (v1 → v7)", "03 모델 비교 (Dummy, Z-score, IF, RF)", "05 관제용 모델 저장 (registry)"], t["accent"]),
              ("cal01-review", "공동 검토 사이트", ["3σ 후보와 모델 후보를 그래프로 봄", "팀이 1, 0, 보류를 남김 (T, S, M)", "검토 표 CSV로 내보냄"], t["warm"]),
              ("cal01-monitor", "소둔로 관제", ["3D 소둔로와 채널 위치", "Z-score 경보와 현장 요청", "구역별 모델을 레지스트리에서 읽음"], t["cool"])]
-    cw, ch, y0 = 340, 196, 78
-    xs = [56, 430, 804]
+    cw, ch, y0 = 320, 196, 78
+    xs = [56, 440, 824]
     for (title, sub, lines, col), x in zip(cards, xs):
         s += raised(t, x, y0, cw, ch, 18)
         # 왼쪽 색 기둥 (둥근 막대)
@@ -197,15 +227,17 @@ def flow(theme):
         for i, line in enumerate(lines):
             s += coin(t, x + 54, y0 + 106 + i * 28, 4, col)
             s += text(x + 66, y0 + 111 + i * 28, line, 13, t["ink"])
-    # 카드 사이 연결: 홈 선 위로 점이 흐름
-    for x in [396, 770]:
-        s += groove(t, x + 2, y0 + 96, x + 32, y0 + 96)
-        s += '<circle r="5" fill="%s"><animateMotion dur="1.4s" repeatCount="indefinite" path="M %d %d L %d %d"/></circle>\n' % (t["sub"], x + 2, y0 + 96, x + 32, y0 + 96)
-    # 되돌아오는 길
-    s += '<path d="M 600 %d C 600 %d, 226 %d, 226 %d" fill="none" stroke="%s" stroke-opacity="%s" stroke-width="3"/>\n' % (y0 + ch + 4, y0 + ch + 34, y0 + ch + 34, y0 + ch + 6, t["lo"], t["lo_a"])
-    s += '<path d="M 600 %d C 600 %d, 226 %d, 226 %d" fill="none" stroke="%s" stroke-width="2" stroke-dasharray="6 8"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="1.2s" repeatCount="indefinite"/></path>\n' % (
-        y0 + ch + 4, y0 + ch + 34, y0 + ch + 34, y0 + ch + 6, t["warm"])
-    s += text(413, y0 + ch + 56, "팀 판단이 검토 표로 돌아와 다음 정답(v6, v7)이 됨", 13, t["warm"], anchor="middle")
+    # 관 1: 후보가 검토 사이트로. 관 2: 팀 판단이 관제의 과거 LOT 화면으로
+    s += pipe(t, 376, 440, y0 + 100, t["warm"], "후보 (3σ, 모델)")
+    s += pipe(t, 760, 824, y0 + 100, t["cool"], "팀 판단")
+    # 굽은 관 1: 검토 표가 분석 저장소로 돌아와 다음 정답이 됨
+    d1 = "M 600 %d C 600 %d, 216 %d, 216 %d" % (y0 + ch + 2, y0 + ch + 50, y0 + ch + 50, y0 + ch + 4)
+    s += curve_pipe(t, d1, t["warm"], "검토 표 → 정답 v6, v7", 408, y0 + ch + 72)
+    s += up_arrow(t, 216, y0 + ch - 2, t["warm"])
+    # 굽은 관 2: 05 노트북이 저장한 모델이 관제로 (카드 아래로 지나감)
+    d2 = "M 300 %d C 300 %d, 984 %d, 984 %d" % (y0 + ch + 2, y0 + ch + 96, y0 + ch + 96, y0 + ch + 4)
+    s += curve_pipe(t, d2, t["accent"], "모델 registry (05 노트북)", 642, y0 + ch + 116, dur=3.2)
+    s += up_arrow(t, 984, y0 + ch - 2, t["accent"])
     s += "</svg>\n"
     write("flow", theme, s)
 

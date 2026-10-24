@@ -13,12 +13,14 @@
 | 7 | [namelesspark/11](namelesspark/11_cal01_base_v6.ipynb) | v3 + 팀 판단을 1분으로 묶음 | `cal01_base_v6.csv` |
 | 7-2 | [namelesspark/12](namelesspark/12_if_candidates.ipynb) | IsolationForest 후보 목록 (검토 사이트에 올릴 것) | `if_candidates.csv` |
 | 7-3 | [namelesspark/13](namelesspark/13_cal01_base_v7.ipynb) | v6 + 모델 후보의 팀 판단 + 규칙 해제 2개를 1분으로 묶음 | `cal01_base_v7.csv` |
+| 7-4 | [namelesspark/14](namelesspark/14_candidate_rf.ipynb) | 2단계: Z-score 경보 묶음(후보)을 RandomForest가 팀 판단으로 거름. 팀이 안 본 후보에 점수 | `candidates_zscore.csv`, `candidate_rf_ranked.csv` |
 | 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
 | 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
 | 10 | [sayletskin/05](sayletskin/05_save_models.ipynb) | 관제용 모델 저장 (구역 하나씩, 03 결과가 있어야 함) | `models/<라벨 버전>/<입력 태그>/<구역>/`, `models/registry.json` |
 
 - 06 ~ 11은 위 순서대로 한 번만 실행하면 됨 (07, 08, 11은 v1을, 09는 v2를, 10은 v3를 읽음. 11은 마지막에 v5와 비교하므로 10 다음에 실행)
 - 03은 첫 셀의 `DATA_FILE`, `ZONE`만 바꿔서 여러 번 실행함
+- 14는 03과 평가 단위가 다름. 03은 1분마다 1, 0을 맞히는 F1이고, 14는 Z-score가 찾은 경보 묶음 하나를 팀이 1이라 할지 0이라 할지를 맞힘 (팀이 판단한 후보로만 학습, LOT 하나 빼고 학습과 시간순 학습 두 가지)
 - 03의 `LABEL_RULE`은 기본 `"v6"`(팀 판단이 있으면 그 값, 없으면 통계 후보). v7 데이터도 이 기본으로 평가함. `"team_only"`(팀이 안 본 통계 후보는 뺌)는 보조 평가이며 결과 이름에 `_teamonly`가 붙음
 - 05는 03과 같은 `DATA_FILE`, `ZONE`, `USE_` 값으로 실행함. 모델 파일은 git에 올리지 않고 `models/README.md`대로 관제 저장소로 옮김
 - 03의 공통 움직임 컬럼은 구역 그룹별로 만듦 (건조·예열 Z1·Z2, 가열·균열 Z3 ~ Z6, 과시효 Z7·Z8. CLN, Z9, COOLING은 그룹 없음)

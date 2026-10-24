@@ -22,6 +22,7 @@ P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니�
 | `data/labels/` | 팀 검토 표 `domain_decisions.csv` | 팀이 직접 관리 (아래 참고) |
 | `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v7.csv` | `notebooks/namelesspark/06` ~ `13` |
 | `data/processed/model_results/` | 모델 비교 결과 | `notebooks/sayletskin/03` |
+| `data/processed/candidates_zscore.csv`, `candidate_rf_ranked.csv` | Z-score 경보 묶음과 팀이 안 본 후보의 RF 점수 | `notebooks/namelesspark/14` |
 
 ## 팀 검토 표 `data/labels/domain_decisions.csv`
 

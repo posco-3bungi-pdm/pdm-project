@@ -29,7 +29,8 @@ BLUE_MID = (0x57 / 255, 0x93 / 255, 0xbd / 255)
 PILL = (0xd6 / 255, 0xe6 / 255, 0xf2 / 255)
 HEAD_BG = (0xf0 / 255, 0xf6 / 255, 0xfb / 255)
 GRAY = (0x60 / 255, 0x6a / 255, 0x73 / 255)
-RULE = (0xe3 / 255, 0xed / 255, 0xf5 / 255)
+RULE = (0xcf / 255, 0xd4 / 255, 0xd8 / 255)
+PAGE_NO = (0x58 / 255, 0x94 / 255, 0xbe / 255)
 WHITE = (1, 1, 1)
 
 FOOTER_TEXT = "CAL01 | 연속소둔로 이상 탐지 결과보고서"
@@ -63,7 +64,7 @@ CHAPTERS = [
     ("역할", "팀원별 담당 · 배운 점"),
 ]
 CSS = """
-@page { size: A4; margin: 33mm 16.5mm 17mm 16mm; }
+@page { size: A4; margin: 35mm 15.9mm 17mm 15.9mm; }
 @page :first { margin: 0; }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
@@ -89,14 +90,14 @@ b { font-weight: 700; }
 
 /* 목차 */
 .toc-title { font-size: 25pt; font-weight: 500; color: #005f98; margin: 2mm 0 2mm 0; }
-.toc-flow { font-size: 9.2pt; color: #50545a; margin: 0 0 5mm 0; }
-.toc-row { display: flex; align-items: flex-start; padding: 3.2mm 6mm; border-radius: 3mm; margin-bottom: 1.6mm; }
-.toc-row:nth-child(odd) { background: #e9f2f9; }
-.toc-row .no { width: 13mm; font-size: 14pt; font-weight: 700; color: #5894be; line-height: 1.2; }
+.toc-flow { font-size: 10pt; color: #606a73; margin: 0 0 6mm 0; }
+.toc-row { display: flex; align-items: flex-start; height: 50pt; padding: 8pt 9mm 0 9mm; border-radius: 3.5mm; margin-bottom: 13pt; }
+.toc-row:nth-child(odd) { background: #edf4f9; }
+.toc-row .no { width: 34pt; font-size: 16pt; font-weight: 700; color: #5894be; line-height: 1.2; }
 .toc-row .t { flex: 1; }
 .toc-row .t .name { font-size: 12pt; font-weight: 500; color: #005f98; line-height: 1.25; }
-.toc-row .t .sub { font-size: 8.2pt; color: #606a73; margin-top: 1mm; }
-.toc-row .pg { width: 10mm; text-align: right; font-size: 10pt; color: #333; }
+.toc-row .t .sub { font-size: 8.8pt; color: #606a73; margin-top: 2pt; }
+.toc-row .pg { width: 10mm; text-align: right; font-size: 11pt; color: #333; }
 .toc-note { font-size: 8.2pt; color: #606a73; margin: 3mm 0 0 0; }
 .contact { margin-top: 5mm; }
 
@@ -107,7 +108,7 @@ b { font-weight: 700; }
 .sec { display: flex; align-items: center; margin: 7mm 0 1.5mm 0; page-break-after: avoid; }
 .sec .badge { width: 47pt; height: 29pt; border-radius: 4pt; background: #e9f2f9; color: #005f98; font-size: 14pt; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-right: 12pt; }
 .sec .name { font-size: 16.5pt; font-weight: 500; color: #333; }
-.sec-label { font-size: 8.1pt; color: #5894be; margin: 0 0 3mm 0; }
+.sec-label { font-size: 8.1pt; color: #5894be; margin: 0 0 3mm 0; break-after: avoid; page-break-after: avoid; }
 h4 { font-size: 10.7pt; font-weight: 500; color: #005f98; margin: 5mm 0 2mm 0; page-break-after: avoid; }
 
 /* 상자 */
@@ -124,18 +125,23 @@ li::marker { color: #5894be; }
 .t-fact { color: #005f98; } .t-team { color: #5894be; } .t-hyp { color: #606a73; }
 
 /* 표 */
-.tcap { font-size: 8.1pt; color: #005f98; font-weight: 500; margin: 3mm 0 1.5mm 0; page-break-after: avoid; }
+.tcap { font-size: 8.1pt; color: #005f98; font-weight: 500; margin: 3mm 0 1.5mm 0; page-break-after: avoid; break-after: avoid; }
 table.data { width: 100%; border-collapse: collapse; margin: 0 0 5mm 0; font-size: 8.2pt; page-break-inside: avoid; }
 table.data th { background: #5793bd; color: #fff; font-weight: 500; text-align: left; padding: 3.5pt 7pt; font-size: 8.3pt; }
-table.data td { padding: 3.2pt 7pt; border-bottom: 1px solid #e3edf5; vertical-align: top; line-height: 1.45; }
+table.data th, table.data td { border-bottom: 0.35pt solid #cfd4d8; }
+table.data th + th, table.data td + td { border-left: 0.3pt solid #cfd4d8; }
+table.data td { padding: 3.2pt 7pt; vertical-align: top; line-height: 1.45; }
 table.data td:first-child { background: #cadbe9; color: #005f98; }
 table.data.plain td:first-child { background: transparent; color: #333; }
 table.data.nw td:first-child, table.data.nw th:first-child { white-space: nowrap; }
-table.data tr:last-child td { border-bottom: 1px solid #cadbe9; }
+table.data.long { page-break-inside: auto; }
+table.data.long tr { page-break-inside: avoid; }
+table.data thead { display: table-header-group; }
+.keep { page-break-inside: avoid; }
 
 /* 그림 */
 figure { margin: 2mm 0 5mm 0; page-break-inside: avoid; text-align: center; }
-figure img { max-width: 100%; border: 1px solid #d6e6f2; border-radius: 2pt; }
+figure img { max-width: 100%; }
 figcaption { font-size: 8.1pt; color: #606a73; margin-top: 2mm; text-align: left; }
 figcaption b { color: #005f98; font-weight: 500; }
 """
@@ -275,11 +281,12 @@ def render_table(caption, rows, plain=False):
         m = re.match(r"^(표 [\d\-]+\.)\s*(.*)$", caption)
         out.append('<div class="tcap">%s %s</div>' % (m.group(1), inline(m.group(2))))
     short_first = all(len(re.sub(r"[`*]", "", r[0])) <= 9 for r in rows if r)
-    out.append('<table class="data%s%s">' % (" plain" if plain else "", " nw" if short_first else ""))
-    out.append("<tr>" + "".join("<th>%s</th>" % inline(c) for c in rows[0]) + "</tr>")
+    long = len(rows) > 10  # 긴 표는 쪽을 넘기되 머리글을 반복
+    out.append('<table class="data%s%s%s">' % (" plain" if plain else "", " nw" if short_first else "", " long" if long else ""))
+    out.append("<thead><tr>" + "".join("<th>%s</th>" % inline(c) for c in rows[0]) + "</tr></thead><tbody>")
     for r in rows[1:]:
         out.append("<tr>" + "".join("<td>%s</td>" % inline(c) for c in r) + "</tr>")
-    out.append("</table>")
+    out.append("</tbody></table>")
     return "".join(out)
 
 
@@ -294,27 +301,38 @@ def render_image(cap, path):
 def render_chapter(ch, toc_pages):
     out = ['<div class="chapter" id="ch%d">' % ch["num"]]
     out.append('<div class="chapter-bar">CHAPTER %02d<span>%s</span></div>' % (ch["num"], html.escape(ch["title"])))
-    sec_idx = 0
     key_mode = False
+    head = ""  # 절 제목은 첫 내용과 한 묶음으로 두어 쪽 끝에 혼자 남지 않게 함
     for kind, val in ch["blocks"]:
         if kind == "section":
-            sec_idx += 1
             _, sub, title = val
             key_mode = "종합" in title
-            out.append('<div class="sec"><div class="badge">%02d</div><div class="name">%s</div></div>' % (int(sub), html.escape(title)))
-            out.append('<div class="sec-label">%s · %s.%s</div>' % (html.escape(ch["title"]), ch["num"], sub))
-        elif kind == "table":
-            out.append(render_table(*val))
+            head = ('<div class="sec"><div class="badge">%02d</div><div class="name">%s</div></div>' % (int(sub), html.escape(title))
+                    + '<div class="sec-label">%s · %s.%s</div>' % (html.escape(ch["title"]), ch["num"], sub))
+            continue
+        if kind == "table":
+            block = render_table(*val)
         elif kind == "image":
-            out.append(render_image(*val))
+            block = render_image(*val)
         elif kind == "bullets":
-            out.append(render_bullets(val, key=key_mode))
+            block = render_bullets(val, key=key_mode)
         elif kind == "subhead":
-            out.append("<h4>%s</h4>" % inline(val))
+            block = "<h4>%s</h4>" % inline(val)
         elif kind == "note":
-            out.append('<div class="note">%s</div>' % inline(val))
+            block = '<div class="note">%s</div>' % inline(val)
         else:
-            out.append("<p>%s</p>" % inline(val))
+            block = "<p>%s</p>" % inline(val)
+        small = kind in ("para", "note", "subhead") or (kind == "bullets" and len(val) <= 3) or (kind == "table" and len(val[1]) <= 5)
+        if head and small:
+            out.append('<div class="keep">' + head + block + "</div>")
+            head = ""
+        elif head:
+            out.append(head + block)  # 큰 블록은 CSS break-after: avoid에 맡김
+            head = ""
+        else:
+            out.append(block)
+    if head:
+        out.append(head)
     out.append("</div>")
     return "".join(out)
 
@@ -350,12 +368,6 @@ def render_toc(chapters, toc_pages, preface):
         out.append('<a class="toc-row" href="#ch%d"><div class="no">%02d</div><div class="t"><div class="name">%s</div><div class="sub">%s</div></div><div class="pg">%s</div></a>'
                    % (ch["num"], ch["num"], html.escape(ch["title"]), html.escape(sub), pg))
     out.append('<div class="toc-note">상단 장 이름 또는 목차 항목을 누르면 해당 장으로 이동한다.</div>')
-    if preface:
-        out.append('<div class="contact"><div class="tcap">이 문서를 읽는 법</div>')
-        for kind, val in preface["blocks"]:
-            if kind == "bullets":
-                out.append(render_bullets(val))
-        out.append("</div>")
     out.append("</div>")
     return "".join(out)
 
@@ -412,7 +424,7 @@ def stamp(pdf_path, out_path, chapters):
     cur_ch = 0
     cur_sec = "목차"
     width = doc[0].rect.width
-    x0, x1 = 45.0, width - 47.0
+    x0, x1 = 45.0, 550.0  # 원본 본문 폭 505pt
     n_tabs = len(CHAPTERS)
     gap = 5.0
     pill_w = (x1 - x0 - gap * (n_tabs - 1)) / n_tabs
@@ -452,10 +464,10 @@ def stamp(pdf_path, out_path, chapters):
             rx0 = x0 + k * (pill_w + gap)
             r = fitz.Rect(rx0, 25, rx0 + pill_w, 45)
             active = (k + 1) == cur_ch
-            shape.draw_rect(r)
+            shape.draw_rect(r, radius=0.5)  # 알약 모양
             shape.finish(color=None, fill=BLUE_BAR if active else PILL)
-            tw = font.text_length(tab, fontsize=7.3)
-            shape.insert_text(fitz.Point(rx0 + (pill_w - tw) / 2, 38.5), tab, fontsize=7.3, fontname="NotoKR", fontfile=font_file, color=WHITE if active else BLUE)
+            tw = font.text_length(tab, fontsize=8)
+            shape.insert_text(fitz.Point(rx0 + (pill_w - tw) / 2, 38.3), tab, fontsize=8, fontname="NotoKR", fontfile=font_file, color=WHITE if active else BLUE)
             if (k + 1) in ch_pages:
                 page.insert_link({"kind": fitz.LINK_GOTO, "from": r, "page": ch_pages[k + 1] - 1, "to": fitz.Point(0, 0)})
         # 경로줄
@@ -465,16 +477,16 @@ def stamp(pdf_path, out_path, chapters):
             crumb = "%s  /  %s" % (titles.get(cur_ch, ""), cur_sec)
         else:
             crumb = titles.get(cur_ch, "")
-        shape.insert_text(fitz.Point(x0, 81), crumb, fontsize=8, fontname="NotoKR", fontfile=font_file, color=GRAY)
+        shape.insert_text(fitz.Point(x0, 81.5), crumb, fontsize=8, fontname="NotoKR", fontfile=font_file, color=GRAY)
         shape.draw_line(fitz.Point(x0, 90), fitz.Point(x1, 90))
-        shape.finish(color=RULE, width=0.6)
+        shape.finish(color=RULE, width=0.55)
         # 꼬리말
         shape.draw_line(fitz.Point(x0, 803), fitz.Point(x1, 803))
-        shape.finish(color=RULE, width=0.6)
-        shape.insert_text(fitz.Point(x0, 818), FOOTER_TEXT, fontsize=7.5, fontname="NotoKR", fontfile=font_file, color=GRAY)
+        shape.finish(color=RULE, width=0.45)
+        shape.insert_text(fitz.Point(x0, 818.5), FOOTER_TEXT, fontsize=7.5, fontname="NotoKR", fontfile=font_file, color=GRAY)
         pno = str(i + 1)
-        tw = font.text_length(pno, fontsize=8.5)
-        shape.insert_text(fitz.Point(x1 - tw, 818), pno, fontsize=8.5, fontname="NotoKR", fontfile=font_file, color=BLUE)
+        tw = font.text_length(pno, fontsize=10)
+        shape.insert_text(fitz.Point(x1 - tw, 819.5), pno, fontsize=10, fontname="NotoKR", fontfile=font_file, color=PAGE_NO)
         shape.commit()
     doc.save(out_path, garbage=3, deflate=True)
     return len(doc)

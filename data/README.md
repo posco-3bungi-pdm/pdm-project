@@ -20,7 +20,7 @@ P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니�
 | --- | --- | --- |
 | `data/` 또는 `data/raw/` | 원본 CSV 8개 | 배포 자료를 복사 |
 | `data/labels/` | 팀 검토 표 `domain_decisions.csv` | 팀이 직접 관리 (아래 참고) |
-| `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v6.csv` | `notebooks/namelesspark/06` ~ `11` |
+| `data/processed/` | `cal01_base_v1.csv` ~ `cal01_base_v7.csv` | `notebooks/namelesspark/06` ~ `13` |
 | `data/processed/model_results/` | 모델 비교 결과 | `notebooks/sayletskin/03` |
 
 ## 팀 검토 표 `data/labels/domain_decisions.csv`
@@ -35,3 +35,4 @@ P제철 배포본을 사용하면 교육용 재현 데이터임을 명시합니�
 | `REASON`, `SOURCE` | 판단 이유와 출처 |
 
 - CI가 CSV 커밋을 막으므로 이 표도 원본처럼 팀 공유 경로로 주고받습니다.
+- v7은 이 표 외에 규칙 해제 2개를 13번 노트북 안에서 적용합니다 (출력만 3σ를 넘은 행, 온도가 0.5℃ 미만 벗어난 행은 0). 표에는 행이 없고 `notebooks/README.md`에 설명이 있습니다.

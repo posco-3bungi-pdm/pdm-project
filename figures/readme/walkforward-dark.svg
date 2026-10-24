@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="1200" height="350" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<defs>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="inset" x="-10%" y="-10%" width="120%" height="130%"><feOffset dx="0" dy="3"/><feGaussianBlur stdDeviation="3" result="ob"/><feComposite operator="out" in="SourceGraphic" in2="ob" result="inv"/><feFlood flood-color="#000" flood-opacity="0.55" result="col"/><feComposite operator="in" in="col" in2="inv" result="sh"/><feComposite operator="over" in="sh" in2="SourceGraphic"/></filter>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.6 0"/></filter>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a231c"/><stop offset="1" stop-color="#212c23"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d110e"/><stop offset="1" stop-color="#161d17"/></linearGradient>
+<radialGradient id="coin" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/></radialGradient>
+</defs>
+<rect width="1200" height="350" rx="22" fill="url(#bg)"/>
+<rect width="1200" height="350" rx="22" filter="url(#grain)" opacity="0.05"/>
+<circle cx="1130" cy="330" r="170" fill="#ffb347" opacity="0.05"/>
+<circle cx="1104" cy="348" r="142" fill="#ffb347" opacity="0.08"/>
+<circle cx="1078" cy="366" r="114" fill="#ffb347" opacity="0.12"/>
+<text x="57" y="50" font-size="18" fill="#000000" font-weight="bold" text-anchor="start" opacity="0.55">시간 순서를 지키는 시험: 앞 LOT으로 배우고, 바로 다음 LOT 하나를 맞힘 (10번 반복)</text>
+<text x="55" y="47" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.10">시간 순서를 지키는 시험: 앞 LOT으로 배우고, 바로 다음 LOT 하나를 맞힘 (10번 반복)</text>
+<text x="56" y="48" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="start" >시간 순서를 지키는 시험: 앞 LOT으로 배우고, 바로 다음 LOT 하나를 맞힘 (10번 반복)</text>
+<rect x="42" y="80" width="1140" height="116" rx="16" fill="#080b09" filter="url(#inset)"/>
+<path d="M 58 197 L 1166 197" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<rect x="56" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="56" y="92" width="72" height="92" rx="12" fill="#a8ff3e" fill-opacity="0.45"><animate attributeName="fill" values="#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 68 93 L 116 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="93.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">001</text>
+<text x="91.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">001</text>
+<text x="92.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >001</text>
+<text x="92.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SGCC</text>
+<text x="92.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >1/2</text>
+<rect x="136" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="136" y="92" width="72" height="92" rx="12" fill="#a8ff3e" fill-opacity="0.45"><animate attributeName="fill" values="#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 148 93 L 196 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="173.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">024</text>
+<text x="171.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">024</text>
+<text x="172.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >024</text>
+<text x="172.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPFH590</text>
+<text x="172.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >3/7</text>
+<rect x="216" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="216" y="92" width="72" height="92" rx="12" fill="#a8ff3e" fill-opacity="0.45"><animate attributeName="fill" values="#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 228 93 L 276 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="253.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">037</text>
+<text x="251.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">037</text>
+<text x="252.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >037</text>
+<text x="252.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCE</text>
+<text x="252.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >4/13</text>
+<rect x="296" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="296" y="92" width="72" height="92" rx="12" fill="#a8ff3e" fill-opacity="0.45"><animate attributeName="fill" values="#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 308 93 L 356 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="333.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">038</text>
+<text x="331.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">038</text>
+<text x="332.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >038</text>
+<text x="332.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCEN</text>
+<text x="332.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >4/16</text>
+<rect x="376" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="376" y="92" width="72" height="92" rx="12" fill="#ff5a5f" fill-opacity="0.45"><animate attributeName="fill" values="#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 388 93 L 436 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="413.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">044</text>
+<text x="411.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">044</text>
+<text x="412.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >044</text>
+<text x="412.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPHC</text>
+<text x="412.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >5/3</text>
+<rect x="456" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="456" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 468 93 L 516 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="493.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">058</text>
+<text x="491.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">058</text>
+<text x="492.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >058</text>
+<text x="492.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >DP590</text>
+<text x="492.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >6/9</text>
+<rect x="536" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="536" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 548 93 L 596 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="573.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">061</text>
+<text x="571.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">061</text>
+<text x="572.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >061</text>
+<text x="572.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPHC</text>
+<text x="572.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >6/15</text>
+<rect x="616" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="616" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 628 93 L 676 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="653.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">069</text>
+<text x="651.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">069</text>
+<text x="652.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >069</text>
+<text x="652.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPHC</text>
+<text x="652.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >7/7</text>
+<rect x="696" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="696" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 708 93 L 756 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="733.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">091</text>
+<text x="731.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">091</text>
+<text x="732.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >091</text>
+<text x="732.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPHC</text>
+<text x="732.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >9/8</text>
+<rect x="776" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="776" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 788 93 L 836 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="813.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">108</text>
+<text x="811.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">108</text>
+<text x="812.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >108</text>
+<text x="812.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPFH590</text>
+<text x="812.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >10/18</text>
+<rect x="856" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="856" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 868 93 L 916 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="893.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">114</text>
+<text x="891.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">114</text>
+<text x="892.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >114</text>
+<text x="892.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCEN</text>
+<text x="892.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >11/4</text>
+<rect x="936" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="936" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 948 93 L 996 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="973.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">117</text>
+<text x="971.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">117</text>
+<text x="972.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >117</text>
+<text x="972.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCD</text>
+<text x="972.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >11/13</text>
+<rect x="1016" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="1016" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#ff5a5f;#a8ff3e;#a8ff3e" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 1028 93 L 1076 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="1053.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">121</text>
+<text x="1051.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">121</text>
+<text x="1052.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >121</text>
+<text x="1052.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCE</text>
+<text x="1052.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >11/24</text>
+<rect x="1096" y="92" width="72" height="92" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>
+<rect x="1096" y="92" width="72" height="92" rx="12" fill="#212c23" fill-opacity="0.45"><animate attributeName="fill" values="#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#212c23;#ff5a5f;#ff5a5f" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></rect>
+<path d="M 1108 93 L 1156 93" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="1133.0" y="130" font-size="18" fill="#000000" font-weight="bold" text-anchor="middle" opacity="0.55">133</text>
+<text x="1131.0" y="127" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.10">133</text>
+<text x="1132.0" y="128" font-size="18" fill="#eef4ec" font-weight="bold" text-anchor="middle" >133</text>
+<text x="1132.0" y="150" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >SPCE</text>
+<text x="1132.0" y="168" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >12/28</text>
+<rect x="56" y="220" width="1088" height="44" rx="12" fill="#080b09" filter="url(#inset)"/>
+<path d="M 68 265 L 1132 265" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 1 / 10 : 앞의 4개 LOT으로 배우고 LOT 044를 맞힘<animate attributeName="opacity" values="1;0;0;0;0;0;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 2 / 10 : 앞의 5개 LOT으로 배우고 LOT 058를 맞힘<animate attributeName="opacity" values="0;1;0;0;0;0;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 3 / 10 : 앞의 6개 LOT으로 배우고 LOT 061를 맞힘<animate attributeName="opacity" values="0;0;1;0;0;0;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 4 / 10 : 앞의 7개 LOT으로 배우고 LOT 069를 맞힘<animate attributeName="opacity" values="0;0;0;1;0;0;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 5 / 10 : 앞의 8개 LOT으로 배우고 LOT 091를 맞힘<animate attributeName="opacity" values="0;0;0;0;1;0;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 6 / 10 : 앞의 9개 LOT으로 배우고 LOT 108를 맞힘<animate attributeName="opacity" values="0;0;0;0;0;1;0;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 7 / 10 : 앞의 10개 LOT으로 배우고 LOT 114를 맞힘<animate attributeName="opacity" values="0;0;0;0;0;0;1;0;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 8 / 10 : 앞의 11개 LOT으로 배우고 LOT 117를 맞힘<animate attributeName="opacity" values="0;0;0;0;0;0;0;1;0;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 9 / 10 : 앞의 12개 LOT으로 배우고 LOT 121를 맞힘<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;1;0;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<text x="600" y="248" font-size="16" fill="#eef4ec" text-anchor="middle" opacity="0">시험 10 / 10 : 앞의 13개 LOT으로 배우고 LOT 133를 맞힘<animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;0" keyTimes="0.000;0.100;0.200;0.300;0.400;0.500;0.600;0.700;0.800;0.900;1.000" calcMode="discrete" dur="20.0s" repeatCount="indefinite"/></text>
+<circle cx="64" cy="298" r="7" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+<circle cx="64" cy="298" r="7" fill="url(#coin)"/>
+<text x="80" y="303" font-size="13" fill="#9fb39d" font-weight="normal" text-anchor="start" >학습에 씀</text>
+<circle cx="183" cy="298" r="7" fill="#ff5a5f" filter="url(#shadow-sm)"/>
+<circle cx="183" cy="298" r="7" fill="url(#coin)"/>
+<text x="199" y="303" font-size="13" fill="#9fb39d" font-weight="normal" text-anchor="start" >지금 시험하는 LOT</text>
+<circle cx="380" cy="298" r="7" fill="#9fb39d" filter="url(#shadow-sm)"/>
+<circle cx="380" cy="298" r="7" fill="url(#coin)"/>
+<text x="396" y="303" font-size="13" fill="#9fb39d" font-weight="normal" text-anchor="start" >아직 안 본 미래</text>
+<text x="1144" y="303" font-size="13" fill="#9fb39d" font-weight="normal" text-anchor="end" >10번의 결과를 모두 합쳐 F1을 냄 · 첫 4개 LOT은 학습에만 씀 · random_state = 42</text>
+<text x="1144" y="328" font-size="12" fill="#9fb39d" font-weight="normal" text-anchor="end" >LOT 번호가 곧 시간 순서 (2024-01 → 2024-12). 미래 값은 입력에도, 통계에도 쓰지 않음</text>
+</svg>

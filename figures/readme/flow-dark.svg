@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 404" width="1200" height="404" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<defs>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.45"/></filter>
+<filter id="inset" x="-10%" y="-10%" width="120%" height="130%"><feOffset dx="0" dy="3"/><feGaussianBlur stdDeviation="3" result="ob"/><feComposite operator="out" in="SourceGraphic" in2="ob" result="inv"/><feFlood flood-color="#000" flood-opacity="0.55" result="col"/><feComposite operator="in" in="col" in2="inv" result="sh"/><feComposite operator="over" in="sh" in2="SourceGraphic"/></filter>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.6 0"/></filter>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a231c"/><stop offset="1" stop-color="#212c23"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d110e"/><stop offset="1" stop-color="#161d17"/></linearGradient>
+<radialGradient id="coin" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#000000" stop-opacity="0.35"/></radialGradient>
+</defs>
+<rect width="1200" height="404" rx="22" fill="url(#bg)"/>
+<rect width="1200" height="404" rx="22" filter="url(#grain)" opacity="0.05"/>
+<circle cx="1120" cy="40" r="150" fill="#5ec8ff" opacity="0.05"/>
+<circle cx="1094" cy="58" r="122" fill="#5ec8ff" opacity="0.08"/>
+<circle cx="1068" cy="76" r="94" fill="#5ec8ff" opacity="0.12"/>
+<text x="57" y="50" font-size="20" fill="#000000" font-weight="bold" text-anchor="start" opacity="0.55">세 저장소가 한 흐름으로 이어짐</text>
+<text x="55" y="47" font-size="20" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.10">세 저장소가 한 흐름으로 이어짐</text>
+<text x="56" y="48" font-size="20" fill="#eef4ec" font-weight="bold" text-anchor="start" >세 저장소가 한 흐름으로 이어짐</text>
+<rect x="66" y="90" width="320" height="196" rx="18" fill="#080b09" opacity="0.55"/>
+<rect x="56" y="78" width="320" height="196" rx="18" fill="url(#plate)" filter="url(#shadow)"/>
+<path d="M 57 256 L 57 96 Q 57 79 74 79 L 358 79" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<path d="M 74 273 L 358 273 Q 375 273 375 256 L 375 96" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="72" y="96" width="10" height="160" rx="5" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+<rect x="74" y="100" width="3" height="152" rx="1.5" fill="#ffffff" opacity="0.5"/>
+<text x="99" y="126" font-size="22" fill="#000000" font-weight="bold" text-anchor="start" opacity="0.55">pdm-project</text>
+<text x="97" y="123" font-size="22" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.10">pdm-project</text>
+<text x="98" y="124" font-size="22" fill="#eef4ec" font-weight="bold" text-anchor="start" >pdm-project</text>
+<text x="98" y="148" font-size="14" fill="#a8ff3e" font-weight="normal" text-anchor="start" >분석 저장소</text>
+<rect x="94" y="164" width="264" height="92" rx="10" fill="#080b09" filter="url(#inset)"/>
+<path d="M 104 257 L 348 257" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<circle cx="110" cy="184" r="4" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+<circle cx="110" cy="184" r="4" fill="url(#coin)"/>
+<text x="122" y="189" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >06 ~ 13 정답 만들기 (v1 → v7)</text>
+<circle cx="110" cy="212" r="4" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+<circle cx="110" cy="212" r="4" fill="url(#coin)"/>
+<text x="122" y="217" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >03 모델 비교 (Dummy, Z-score, IF, RF)</text>
+<circle cx="110" cy="240" r="4" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+<circle cx="110" cy="240" r="4" fill="url(#coin)"/>
+<text x="122" y="245" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >05 관제용 모델 저장 (registry)</text>
+<rect x="450" y="90" width="320" height="196" rx="18" fill="#080b09" opacity="0.55"/>
+<rect x="440" y="78" width="320" height="196" rx="18" fill="url(#plate)" filter="url(#shadow)"/>
+<path d="M 441 256 L 441 96 Q 441 79 458 79 L 742 79" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<path d="M 458 273 L 742 273 Q 759 273 759 256 L 759 96" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="456" y="96" width="10" height="160" rx="5" fill="#ffb347" filter="url(#shadow-sm)"/>
+<rect x="458" y="100" width="3" height="152" rx="1.5" fill="#ffffff" opacity="0.5"/>
+<text x="483" y="126" font-size="22" fill="#000000" font-weight="bold" text-anchor="start" opacity="0.55">cal01-review</text>
+<text x="481" y="123" font-size="22" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.10">cal01-review</text>
+<text x="482" y="124" font-size="22" fill="#eef4ec" font-weight="bold" text-anchor="start" >cal01-review</text>
+<text x="482" y="148" font-size="14" fill="#ffb347" font-weight="normal" text-anchor="start" >공동 검토 사이트</text>
+<rect x="478" y="164" width="264" height="92" rx="10" fill="#080b09" filter="url(#inset)"/>
+<path d="M 488 257 L 732 257" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<circle cx="494" cy="184" r="4" fill="#ffb347" filter="url(#shadow-sm)"/>
+<circle cx="494" cy="184" r="4" fill="url(#coin)"/>
+<text x="506" y="189" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >3σ 후보와 모델 후보를 그래프로 봄</text>
+<circle cx="494" cy="212" r="4" fill="#ffb347" filter="url(#shadow-sm)"/>
+<circle cx="494" cy="212" r="4" fill="url(#coin)"/>
+<text x="506" y="217" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >팀이 1, 0, 보류를 남김 (T, S, M)</text>
+<circle cx="494" cy="240" r="4" fill="#ffb347" filter="url(#shadow-sm)"/>
+<circle cx="494" cy="240" r="4" fill="url(#coin)"/>
+<text x="506" y="245" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >검토 표 CSV로 내보냄</text>
+<rect x="834" y="90" width="320" height="196" rx="18" fill="#080b09" opacity="0.55"/>
+<rect x="824" y="78" width="320" height="196" rx="18" fill="url(#plate)" filter="url(#shadow)"/>
+<path d="M 825 256 L 825 96 Q 825 79 842 79 L 1126 79" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<path d="M 842 273 L 1126 273 Q 1143 273 1143 256 L 1143 96" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="1.5"/>
+<rect x="840" y="96" width="10" height="160" rx="5" fill="#5ec8ff" filter="url(#shadow-sm)"/>
+<rect x="842" y="100" width="3" height="152" rx="1.5" fill="#ffffff" opacity="0.5"/>
+<text x="867" y="126" font-size="22" fill="#000000" font-weight="bold" text-anchor="start" opacity="0.55">cal01-monitor</text>
+<text x="865" y="123" font-size="22" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.10">cal01-monitor</text>
+<text x="866" y="124" font-size="22" fill="#eef4ec" font-weight="bold" text-anchor="start" >cal01-monitor</text>
+<text x="866" y="148" font-size="14" fill="#5ec8ff" font-weight="normal" text-anchor="start" >소둔로 관제</text>
+<rect x="862" y="164" width="264" height="92" rx="10" fill="#080b09" filter="url(#inset)"/>
+<path d="M 872 257 L 1116 257" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<circle cx="878" cy="184" r="4" fill="#5ec8ff" filter="url(#shadow-sm)"/>
+<circle cx="878" cy="184" r="4" fill="url(#coin)"/>
+<text x="890" y="189" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >3D 소둔로와 채널 위치</text>
+<circle cx="878" cy="212" r="4" fill="#5ec8ff" filter="url(#shadow-sm)"/>
+<circle cx="878" cy="212" r="4" fill="url(#coin)"/>
+<text x="890" y="217" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >Z-score 경보와 현장 요청</text>
+<circle cx="878" cy="240" r="4" fill="#5ec8ff" filter="url(#shadow-sm)"/>
+<circle cx="878" cy="240" r="4" fill="url(#coin)"/>
+<text x="890" y="245" font-size="13" fill="#eef4ec" font-weight="normal" text-anchor="start" >구역별 모델을 레지스트리에서 읽음</text>
+<rect x="376" y="170" width="54" height="16" rx="8" fill="#080b09" filter="url(#inset)"/>
+<path d="M 384 187 L 422 187" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<polygon points="426,167 440,178 426,189" fill="#ffb347" filter="url(#shadow-sm)"/>
+<rect x="378" y="174" width="26" height="8" rx="4" fill="#ffb347" filter="url(#glow)" opacity="0"><animate attributeName="x" from="378" to="400" dur="1.6s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="1.6s" begin="0s" repeatCount="indefinite"/></rect>
+<rect x="378" y="174" width="26" height="8" rx="4" fill="#ffb347" filter="url(#glow)" opacity="0"><animate attributeName="x" from="378" to="400" dur="1.6s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="1.6s" begin="0.8s" repeatCount="indefinite"/></rect>
+<text x="403.0" y="162" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >후보 (3σ, 모델)</text>
+<rect x="760" y="170" width="54" height="16" rx="8" fill="#080b09" filter="url(#inset)"/>
+<path d="M 768 187 L 806 187" stroke="#ffffff" stroke-opacity="0.10" stroke-width="1.5"/>
+<polygon points="810,167 824,178 810,189" fill="#5ec8ff" filter="url(#shadow-sm)"/>
+<rect x="762" y="174" width="26" height="8" rx="4" fill="#5ec8ff" filter="url(#glow)" opacity="0"><animate attributeName="x" from="762" to="784" dur="1.6s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="1.6s" begin="0s" repeatCount="indefinite"/></rect>
+<rect x="762" y="174" width="26" height="8" rx="4" fill="#5ec8ff" filter="url(#glow)" opacity="0"><animate attributeName="x" from="762" to="784" dur="1.6s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="1.6s" begin="0.8s" repeatCount="indefinite"/></rect>
+<text x="787.0" y="162" font-size="11" fill="#9fb39d" font-weight="normal" text-anchor="middle" >팀 판단</text>
+<path d="M 600 276 C 600 324, 216 324, 216 278" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="10" stroke-linecap="round"/>
+<path d="M 600 276 C 600 324, 216 324, 216 278" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="3" stroke-linecap="round"/>
+<path d="M 600 276 C 600 324, 216 324, 216 278" fill="none" stroke="#ffb347" stroke-opacity="0.35" stroke-width="2"/>
+<rect x="-14" y="-4" width="28" height="8" rx="4" fill="#ffb347" filter="url(#glow)"><animateMotion dur="2.4s" repeatCount="indefinite" rotate="auto" path="M 600 276 C 600 324, 216 324, 216 278"/></rect>
+<text x="408" y="346" font-size="11.5" fill="#ffb347" font-weight="bold" text-anchor="middle" >검토 표 → 정답 v6, v7</text>
+<polygon points="207,282 225,282 216,268" fill="#ffb347" filter="url(#shadow-sm)"/>
+<path d="M 300 276 C 300 370, 984 370, 984 278" fill="none" stroke="#000000" stroke-opacity="0.55" stroke-width="10" stroke-linecap="round"/>
+<path d="M 300 276 C 300 370, 984 370, 984 278" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="3" stroke-linecap="round"/>
+<path d="M 300 276 C 300 370, 984 370, 984 278" fill="none" stroke="#a8ff3e" stroke-opacity="0.35" stroke-width="2"/>
+<rect x="-14" y="-4" width="28" height="8" rx="4" fill="#a8ff3e" filter="url(#glow)"><animateMotion dur="3.2s" repeatCount="indefinite" rotate="auto" path="M 300 276 C 300 370, 984 370, 984 278"/></rect>
+<text x="642" y="390" font-size="11.5" fill="#a8ff3e" font-weight="bold" text-anchor="middle" >모델 registry (05 노트북)</text>
+<polygon points="975,282 993,282 984,268" fill="#a8ff3e" filter="url(#shadow-sm)"/>
+</svg>

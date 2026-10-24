@@ -6,15 +6,25 @@
 </picture>
 
 [![CI](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml/badge.svg)](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml)
-[![관제 CAL01 Monitor](https://img.shields.io/badge/%EA%B4%80%EC%A0%9C-CAL01%20Monitor-a8ff3e?style=flat-square&logo=render&logoColor=white&labelColor=0b0f0c)](https://cal01-monitor.onrender.com/)
-[![공동 검토 cal01-review](https://img.shields.io/badge/%EA%B3%B5%EB%8F%99%20%EA%B2%80%ED%86%A0-cal01--review-ffb347?style=flat-square&logo=render&logoColor=white&labelColor=0b0f0c)](https://cal01-review.onrender.com/)
-[![정답 v7](https://img.shields.io/badge/%EC%A0%95%EB%8B%B5-v7-5ec8ff?style=flat-square&labelColor=0b0f0c)](#정답을-일곱-번-다듬음-v1--v7)
+[![정답](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.label_version&label=%EC%A0%95%EB%8B%B5&color=5ec8ff&style=flat-square&labelColor=0b0f0c)](#정답을-일곱-번-다듬음-v1--v7)
+[![검토 표](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.counts.decisions&label=%EA%B2%80%ED%86%A0%20%ED%91%9C&color=5ec8ff&style=flat-square&labelColor=0b0f0c&suffix=%ED%96%89)](#정답을-일곱-번-다듬음-v1--v7)
+[![Z4 F1 (Z-score)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.z4.zscore_f1&label=Z4%20F1%20%28Z-score%29&color=ffb347&style=flat-square&labelColor=0b0f0c)](#구역별)
+[![Z4 F1 (RandomForest)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.z4.rf_f1&label=Z4%20F1%20%28RandomForest%29&color=a8ff3e&style=flat-square&labelColor=0b0f0c)](#구역별)
+[![평균의 평균 F1 (RF)](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.mean_of_means.rf&label=%ED%8F%89%EA%B7%A0%EC%9D%98%20%ED%8F%89%EA%B7%A0%20F1%20%28RF%29&color=a8ff3e&style=flat-square&labelColor=0b0f0c)](#시험-lot별)
+
+[![관제 CAL01 Monitor](https://img.shields.io/website?url=https%3A%2F%2Fcal01-monitor.onrender.com%2Findex.html&label=%EA%B4%80%EC%A0%9C%20CAL01%20Monitor&up_message=%EC%BC%9C%EC%A7%90&down_message=%EC%9E%A0%EB%93%A6&up_color=a8ff3e&down_color=6b7280&logo=render&logoColor=white&style=flat-square&labelColor=0b0f0c)](https://cal01-monitor.onrender.com/)
+[![공동 검토 cal01-review](https://img.shields.io/website?url=https%3A%2F%2Fcal01-review.onrender.com%2Fhealth&label=%EA%B3%B5%EB%8F%99%20%EA%B2%80%ED%86%A0%20cal01-review&up_message=%EC%BC%9C%EC%A7%90&down_message=%EC%9E%A0%EB%93%A6&up_color=ffb347&down_color=6b7280&logo=render&logoColor=white&style=flat-square&labelColor=0b0f0c)](https://cal01-review.onrender.com/)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://skillicons.dev/icons?i=python,sklearn,jupyter,django,react,ts,vite,threejs,electron,flask,postgres,docker,git,github&theme=dark">
+  <img alt="쓴 기술: Python, scikit-learn, Jupyter, Django, React, TypeScript, Vite, three.js, Electron, Flask, PostgreSQL, Docker, Git, GitHub" src="https://skillicons.dev/icons?i=python,sklearn,jupyter,django,react,ts,vite,threejs,electron,flask,postgres,docker,git,github&theme=light" height="40">
+</picture>
 
 [작업 목록](https://github.com/posco-3bungi-pdm/pdm-project/issues) · [Pull requests](https://github.com/posco-3bungi-pdm/pdm-project/pulls) · [프로젝트 보드](https://github.com/orgs/posco-3bungi-pdm/projects/1) · [협업 안내](CONTRIBUTING.md) · [노트북 순서](notebooks/README.md) · [데이터 준비](data/README.md)
 
 </div>
 
-포스코 K-뉴딜 아카데미 3조 **오운완**의 설비 고장 예측 프로젝트임. 연속 소둔로(CAL01) 한 대의 2024년 센서 기록에서 이상 후보를 찾고, 팀이 함께 판단한 정답으로 모델을 시험한 뒤, 그 결과를 관제 화면까지 이어 붙임. 데이터는 교육용 재현 데이터이며 실제 조업 데이터가 아님.
+포스코 K-뉴딜 아카데미 3조 **오운완**의 설비 고장 예측 프로젝트임. 연속 소둔로(CAL01) 한 대의 2024년 센서 기록에서 이상 후보를 찾고 팀이 함께 판단한 정답으로 모델을 시험한 뒤, 그 결과를 관제 화면까지 이어 붙임. 데이터는 교육용 재현 데이터이며 실제 조업 데이터가 아님.
 
 ## 바로 보기
 
@@ -28,12 +38,12 @@
 <td><img alt="검토 화면: LOT 고르기, 후보 목록과 그래프, 판단 메모, 채널 선택, 팀원 기록, LOT 나란히 비교" src="figures/readme/review.gif" width="100%"></td>
 </tr>
 <tr>
-<td>3D 소둔로 위에서 구역을 고르고, 기록을 재생하며 Z-score 경보·채널 그래프·현장 요청을 한 화면에서 봄<br><a href="https://cal01-monitor.onrender.com/">cal01-monitor.onrender.com</a> · 저장소 <code>posco-3bungi-pdm/cal01-monitor</code></td>
+<td>3D 소둔로 위에서 구역을 고르고 기록을 재생하며 Z-score 경보·채널 그래프·현장 요청을 한 화면에서 봄<br><a href="https://cal01-monitor.onrender.com/">cal01-monitor.onrender.com</a> · 저장소 <code>posco-3bungi-pdm/cal01-monitor</code></td>
 <td>3σ 후보와 모델 후보를 LOT 그래프 위에 띄워 팀원이 1, 0, 보류를 남김. 판단은 검토 표가 되어 다음 정답으로 돌아옴<br><a href="https://cal01-review.onrender.com/">cal01-review.onrender.com</a> · 저장소 <code>posco-3bungi-pdm/cal01-review</code></td>
 </tr>
 </table>
 
-두 사이트 모두 팀 계정으로 들어감. 무료 서버라 15분 동안 쓰지 않으면 잠들고, 다시 열 때 1분쯤 걸림.
+두 사이트 모두 팀 계정으로 들어감. 무료 서버라 15분 동안 쓰지 않으면 잠들고 다시 열 때 1분쯤 걸림.
 
 ## 숫자로 보는 프로젝트
 
@@ -54,15 +64,15 @@
   <img alt="분석 저장소에서 정답과 모델을 만들고, 검토 사이트에서 팀이 판단하고, 관제가 모델을 읽는 흐름" src="figures/readme/flow-light.svg" width="100%">
 </picture>
 
-| 저장소 | 하는 일 | 여기서 나가는 것 |
-| --- | --- | --- |
-| `pdm-project` (이 저장소) | 정답 만들기(06 ~ 13), 모델 비교(03), 관제용 모델 저장(05) | `cal01_base_v1 ~ v7.csv`, `models/registry.json` |
-| `cal01-review` | 후보를 그래프로 보고 팀이 판단 | `domain_decisions.csv` (검토 표) |
-| `cal01-monitor` | 3D 소둔로, Z-score 경보, 현장 요청, 모델 레지스트리 | 팀 시연 |
+| 저장소 | 하는 일 | 쓴 것 | 여기서 나가는 것 |
+| --- | --- | --- | --- |
+| `pdm-project` (이 저장소) | 정답 만들기(06 ~ 13), 모델 비교(03), 관제용 모델 저장(05) | <img alt="Python, scikit-learn, Jupyter" src="https://skillicons.dev/icons?i=python,sklearn,jupyter" height="28"> | `cal01_base_v1 ~ v7.csv`, `models/registry.json` |
+| `cal01-review` | 후보를 그래프로 보고 팀이 판단 | <img alt="Flask, PostgreSQL" src="https://skillicons.dev/icons?i=flask,postgres" height="28"> | `domain_decisions.csv` (검토 표) |
+| `cal01-monitor` | 3D 소둔로, Z-score 경보, 현장 요청, 모델 레지스트리 | <img alt="Django, React, TypeScript, three.js, Electron, PostgreSQL, Docker" src="https://skillicons.dev/icons?i=django,react,ts,threejs,electron,postgres,docker" height="28"> | 팀 시연 |
 
 ## 데이터: 연속 소둔로 한 줄 흐름
 
-강판은 세정 → 건조 → 예열 → 가열 → 균열 → 과시효 → 서냉 → 냉각 순으로 지나감. 구역마다 온도(TC)와 가열 출력(OP)을 1초마다 기록하고, Z4에는 로 안 가스 분위기(CP)도 있음.
+강판은 세정 → 건조 → 예열 → 가열 → 균열 → 과시효 → 서냉 → 냉각 순으로 지나감. 구역마다 온도(TC)와 가열 출력(OP)을 1초마다 기록하고 Z4에는 로 안 가스 분위기(CP)도 있음.
 
 | 구역 | 역할 | 센서 | 특징 |
 | --- | --- | --- | --- |
@@ -86,11 +96,11 @@
 | 058 | DP590 | 6/9 | 154 | 121 | SPCE | 11/24 | 652 |
 | 061 | SPHC | 6/15 | 140 | 133 | SPCE | 12/28 | 108 |
 
-앞 4개 LOT(001, 024, 037, 038)은 학습에만 쓰고, 나머지 10개가 시험 LOT임.
+앞 4개 LOT(001, 024, 037, 038)은 학습에만 쓰고 나머지 10개가 시험 LOT임.
 
 </details>
 
-센서 기록 옆에 조업 이벤트(강종 변경), 정비 이력, 부품 교체 이력, 정기 수리 달력을 같이 둠. 정지와 승온 구간을 제외할 때, 그리고 이상이 정비와 이어지는지 볼 때 씀.
+센서 기록 옆에 조업 이벤트(강종 변경), 정비 이력, 부품 교체 이력, 정기 수리 달력을 같이 둠. 정지와 승온 구간을 제외할 때와 이상이 정비와 이어지는지 볼 때 씀.
 
 ## 정답을 일곱 번 다듬음 (v1 → v7)
 
@@ -142,11 +152,11 @@ v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제
 | 모델 | 역할 | 점수 읽는 법 |
 | --- | --- | --- |
 | Dummy (전부 0) | 바닥 점수 | 정확도는 90%가 넘지만 F1은 0. 정확도 대신 F1을 쓰는 이유 |
-| Z-score (지난 값) | 현장 규칙 기준선. 지금까지의 평균에서 3σ 넘으면 경보 | 정답이 3σ로 만들어져 처음엔 가장 높고, 팀 판단이 들어갈수록 내려감 |
+| Z-score (지난 값) | 현장 규칙 기준선. 지금까지의 평균에서 3σ 넘으면 경보 | 정답이 3σ로 만들어져 처음엔 가장 높고 팀 판단이 들어갈수록 내려감 |
 | IsolationForest | 정답 없이 평소와 다른 분을 찾음 (비지도) | F1로는 불리. 후보 뽑기와 팀 판단 대조에 씀 |
 | RandomForest | 정답(통계 후보 + 팀 판단)을 배워 따라 함 (지도) | 팀 판단이 있는 구역에서 Z-score를 넘으면 "팀 판단을 배웠다"는 뜻 |
 
-RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_state=42` 고정임. 구역마다 모델을 따로 만들고, 저장할 때는 `cal01-<정답 버전>-<입력 태그>-<구역>-<모델>-<학습 범위>-<날짜>` 이름으로 레지스트리에 적음.
+RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_state=42` 고정임. 구역마다 모델을 따로 만듦. 저장할 때는 `cal01-<정답 버전>-<입력 태그>-<구역>-<모델>-<학습 범위>-<날짜>` 이름으로 레지스트리에 적음.
 
 <details>
 <summary>발표 자료의 모델 설계 장면 (모핑)</summary>
@@ -178,7 +188,7 @@ RandomForest는 나무 100개, 깊이 10, `class_weight="balanced"`, `random_sta
 
 ### 시험 LOT별
 
-구역 합산 F1과 함께, LOT 하나를 시험했을 때의 점수도 봄. LOT의 F1은 그 LOT에 정답 1이 있는 구역들의 F1 평균이고, 전체는 그 평균의 평균임.
+구역 합산 F1과 함께, LOT 하나를 시험했을 때의 점수도 봄. LOT의 F1은 그 LOT에 정답 1이 있는 구역들의 F1 평균이고 전체는 그 평균의 평균임.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/readme/lot_f1-dark.png">
@@ -219,10 +229,19 @@ RandomForest가 10개 중 5개 LOT에서 1등, IsolationForest 2개, Z-score 1�
 **배운 것**
 
 - 점수를 올린 것은 컬럼이 아니라 정답이었음. 공통 움직임을 해제하고 팀 판단을 넣은 Z3 ~ Z6에서만 RandomForest가 Z-score를 넘음.
-- 통계 후보(3σ) 1의 대부분은 출력 움직임이거나 0.3℃ 튐이었음. 규칙으로 걷어 내자 Z2, Z7, Z8에는 이상이 남지 않았고, Z3 ~ Z6의 이전 점수가 출력 움직임을 맞힌 몫이었음이 드러남.
+- 통계 후보(3σ) 1의 대부분은 출력 움직임이거나 0.3℃ 튐이었음. 규칙으로 걷어 내자 Z2, Z7, Z8에는 이상이 남지 않았고 Z3 ~ Z6의 이전 점수가 출력 움직임을 맞힌 몫이었음이 드러남.
 - 모델 설정(나무 깊이, 문턱, 지연 입력)이나 모델 교체(HistGradientBoosting)로는 ±0.03 안에서만 움직임. 팀이 확정한 이상이 없는 구역은 F1 대신 헛경보 수로 말함.
 
 ## 데이터가 정비 기록과 만나는 곳
+
+LOT 069의 CP-Z4 한 줄을 CSV 값 그대로 그린 것임. 선이 끝까지 그려진 뒤 켜지는 구간이 팀이 1로 확정한 T01이고 그 2시간 뒤에 정비 기록이 있음.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="figures/readme/lot069-cp-dark.svg">
+  <img alt="LOT 069 CP-Z4 1분 기록이 왼쪽부터 그려지고 7/8 02:28 ~ 02:42 T01 구간이 켜짐" src="figures/readme/lot069-cp-light.svg" width="100%">
+</picture>
+
+2024년 한 해로 넓히면 CP가 튄 LOT 뒤에 정비가 따라온 짝이 네 번 있음.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/readme/domain-dark.svg">
@@ -245,21 +264,71 @@ CP는 로 안 가스 분위기를 재는 센서라 밀봉(O링)과 CP 센서 자
 - 규칙이 확정되면 05 노트북으로 v7 모델을 저장해 관제에 올림
 - 03에 사건 단위 지표(확정 구간 안에서 울렸나, 밖에서 몇 번 울렸나) 추가
 
-## 실행 방법
+## 실행 방법 (처음 하는 사람용)
 
-Python 3.14 기준임. 저장소 루트에서 실행함.
+컴퓨터를 처음 다루는 사람도 따라갈 수 있게 순서대로 적음. 윈도우 PC 기준이고 다 하면 30분쯤 걸림.
+
+**준비물 세 가지**
+
+| 준비물 | 어디서 받나 | 잘 됐는지 확인 |
+| --- | --- | --- |
+| Python 3.14 | [python.org/downloads](https://www.python.org/downloads/)에서 받아 설치. 설치 첫 화면 아래의 **Add python.exe to PATH**에 꼭 체크 | PowerShell에 `py -3.14 --version`을 치면 `Python 3.14.x`가 나옴 |
+| Git | [git-scm.com](https://git-scm.com/download/win)에서 받아 설치. 전부 기본값으로 "다음" | `git --version`을 치면 버전이 나옴 |
+| 데이터 | 팀 공유 폴더의 원본 CSV 8개와 검토 표 1개. 저장소 안에는 없음 (팀장에게 요청) | 아래 4번에서 씀 |
+
+**1. PowerShell 열기** — 시작 메뉴에서 "PowerShell"을 검색해 열면 글자만 있는 파란 창이 뜸. 아래 명령은 모두 이 창에 한 줄씩 붙여 넣고 Enter를 치면 됨. `#` 뒤는 설명이라 같이 붙여 넣어도 괜찮음.
+
+**2. 저장소 가져오고 파이썬 도구 설치하기** — 저장소는 프로젝트 파일이 전부 들어 있는 폴더라고 생각하면 됨.
 
 ```powershell
-git clone https://github.com/posco-3bungi-pdm/pdm-project.git
-cd pdm-project
-py -3.14 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-ci.txt
-.\.venv\Scripts\python.exe -m nbstripout --install --attributes .gitattributes
-.\.venv\Scripts\python.exe .github/scripts/check_repository.py
+cd ~\Documents                                                        # 내 문서 폴더로 이동
+git clone https://github.com/posco-3bungi-pdm/pdm-project.git          # 저장소 폴더를 통째로 내려받음
+cd pdm-project                                                         # 그 폴더 안으로 들어감
+py -3.14 -m venv .venv                                                 # 이 프로젝트만 쓰는 파이썬 방(.venv)을 만듦
+.\.venv\Scripts\python.exe -m pip install --upgrade pip                 # 설치 도구 pip을 최신으로
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-ci.txt   # 필요한 꾸러미 전부 설치 (5 ~ 10분)
+.\.venv\Scripts\python.exe -m nbstripout --install --attributes .gitattributes          # 노트북 실행 결과가 Git에 안 올라가게 설정
+.\.venv\Scripts\python.exe .github/scripts/check_repository.py                          # 저장소 검사. PASS가 나오면 준비 끝
 ```
 
-원본 CSV 8개를 `data/` 또는 `data/raw/`에, 검토 표를 `data/labels/domain_decisions.csv`에 둠([data/README.md](data/README.md)). 노트북은 `06 → 13` 순서로 한 번 실행해 정답 CSV를 만들고, `sayletskin/03`에서 `DATA_FILE`과 `ZONE`만 바꿔 모델을 비교함([notebooks/README.md](notebooks/README.md)). README 그림은 `figures/readme/make_readme_svg.py`, `make_readme_charts.py`로 다시 만듦.
+`.venv`를 "활성화"하는 명령은 쓰지 않음. 윈도우 보안 설정에 막히는 일이 많아서 그 방의 `python.exe`를 매번 직접 부르는 방식으로 적어 둠.
+
+**3. 잘 됐는지 확인하기**
+
+```powershell
+.\.venv\Scripts\python.exe -c "import pandas, sklearn; print('준비 완료')"
+```
+
+`준비 완료`가 찍히면 성공임.
+
+**4. 데이터 넣기** — 팀 공유 폴더에서 받은 파일을 아래 자리에 복사해 넣음. 파일 이름은 바꾸지 않음. 파일 목록은 [data/README.md](data/README.md)에 있음.
+
+| 받은 것 | 넣는 자리 |
+| --- | --- |
+| 원본 CSV 8개 | `data/raw/` (또는 `data/`) |
+| 검토 표 `domain_decisions.csv` | `data/labels/` |
+
+**5. 노트북 열고 정답 CSV 만들기**
+
+```powershell
+.\.venv\Scripts\python.exe -m jupyter lab
+```
+
+브라우저가 저절로 열림. 왼쪽 파일 목록에서 `notebooks/namelesspark/06_cal01_base_v1.ipynb`를 열고 위 메뉴 **Run → Run All Cells**를 누름. 끝나면 `07`, `08`, ... `13`까지 번호 순서대로 하나씩 똑같이 함. 다 끝나면 `data/processed/cal01_base_v7.csv`가 생김.
+
+**6. 모델 점수 보기** — `notebooks/sayletskin/03_model_f1.ipynb`를 열어 위쪽 칸의 `DATA_FILE`(어느 정답 CSV를 쓸지)과 `ZONE`(어느 구역을 볼지)만 바꾸고 Run All Cells. 맨 아래에 세 모델의 F1이 표로 나옴.
+
+**막히면**
+
+| 이런 말이 나오면 | 뜻 | 이렇게 |
+| --- | --- | --- |
+| `py : 용어 ... 인식되지 않습니다` | 파이썬이 없거나 설치할 때 PATH에 체크를 안 함 | 파이썬을 다시 설치하면서 PATH에 체크. PowerShell도 새로 열기 |
+| `git : 용어 ... 인식되지 않습니다` | Git이 없음 | Git을 설치한 뒤 PowerShell 새로 열기 |
+| `FileNotFoundError: ... data/raw/...` | 데이터 파일이 자리에 없음 | 4번처럼 파일을 넣고 이름이 맞는지 확인 |
+| 설치가 너무 오래 걸림 | 꾸러미가 많음 | 10분까지는 정상임. 인터넷이 끊겼으면 `pip install` 줄만 다시 실행 |
+| 노트북이 빨간 글을 내고 멈춤 | 앞 번호 노트북의 CSV가 아직 없음 | 06부터 번호 순서대로 다시 실행 |
+
+README 그림을 다시 만들 때는 `figures/readme/make_readme_svg.py`, `make_readme_charts.py`, `make_readme_data_svg.py`를 차례로 실행함. 맨 위 배지의 숫자는 `figures/readme/metrics.json`에서 읽어 오므로 03 노트북 결과가 바뀌면 그 파일만 고치면 됨.
 
 ```text
 .github/     Issue·PR 양식, 자동 검사와 자동 배정
@@ -275,10 +344,10 @@ src/, tests/ 재사용 코드와 테스트
 
 3조 오운완: 김태구(팀장), 김정렬, 박민호, 정수진, 황유진.
 
-**Issue → 작업 브랜치 → PR → CI → 동료 3명 승인 → Squash merge.** `main`은 함께 검토한 결과만 모으고, 원본 데이터·CSV·모델 파일·비밀값은 올리지 않음. 자세한 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md), 자동화는 [docs/automation.md](docs/automation.md)에 있음.
+**Issue → 작업 브랜치 → PR → CI → 동료 3명 승인 → Squash merge.** `main`은 함께 검토한 결과만 모으고 원본 데이터·CSV·모델 파일·비밀값은 올리지 않음. 자세한 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md), 자동화는 [docs/automation.md](docs/automation.md)에 있음.
 
-- 행 수와 독립 표본 수를 구분하고, 분석 단위(LOT, 1분)를 먼저 정함.
-- 시간 순서로 나누고, 통계와 전처리는 지나간 값에만 적용함.
+- 행 수와 독립 표본 수를 구분하고 분석 단위(LOT, 1분)를 먼저 정함.
+- 시간 순서로 나누고 통계와 전처리는 지나간 값에만 적용함.
 - 단순 기준선(Z-score)과 모델을 같은 조건에서 비교함.
 - 팀이 확정한 정답이 없는 구역에서는 F1을 주장하지 않음.
 - 결과에는 판단 근거, 경계 사례, 헛경보 가능성, 현장 적용 한계를 함께 적음.

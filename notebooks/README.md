@@ -11,6 +11,8 @@
 | 5 | [namelesspark/09](namelesspark/09_cal01_base_v4.ipynb) | v2를 1분으로 묶음 | `cal01_base_v4.csv` |
 | 6 | [namelesspark/10](namelesspark/10_cal01_base_v5.ipynb) | v3를 1분으로 묶음 | `cal01_base_v5.csv` |
 | 7 | [namelesspark/11](namelesspark/11_cal01_base_v6.ipynb) | v3 + 팀 판단을 1분으로 묶음 | `cal01_base_v6.csv` |
+| 7-2 | [namelesspark/12](namelesspark/12_if_candidates.ipynb) | IsolationForest 후보 목록 (검토 사이트에 올릴 것) | `if_candidates.csv` |
+| 7-3 | [namelesspark/13](namelesspark/13_cal01_base_v7.ipynb) | v6 + 모델 후보의 팀 판단을 1분으로 묶음 | `cal01_base_v7.csv` |
 | 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
 | 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
 
@@ -28,6 +30,7 @@
 | v4 | 1분 | 1분 안에 후보가 하나라도 있으면 1 | v2를 1분으로 묶음 |
 | v5 | 1분 | v4와 같음 | v3를 1분으로 묶음 |
 | v6 | 1분 | v4와 같음 | v3 + 팀 판단(1, 0)을 1분으로 묶음 |
+| v7 | 1분 | v4와 같음 | v6 + 모델 후보(M 번호)의 팀 판단을 1분으로 묶음. 검토 표에 v7 행이 없으면 v6와 같음 |
 
 - `LABEL`은 CSV에 없음. 모델 노트북에서 `DOMAIN_LABEL`이 있으면 그 값, 없으면 `STAT_LABEL`로 만듦
 - 팀 검토 내용은 `data/labels/domain_decisions.csv` 한 곳에 모음 (LOT, 센서, 시작, 끝, 0 또는 1, 이유)

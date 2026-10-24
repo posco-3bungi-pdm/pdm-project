@@ -15,9 +15,12 @@
 | 7-3 | [namelesspark/13](namelesspark/13_cal01_base_v7.ipynb) | v6 + 모델 후보의 팀 판단을 1분으로 묶음 | `cal01_base_v7.csv` |
 | 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
 | 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
+| 10 | [sayletskin/05](sayletskin/05_save_models.ipynb) | 관제용 모델 저장 (구역 하나씩, 03 결과가 있어야 함) | `models/<라벨 버전>/<입력 태그>/<구역>/`, `models/registry.json` |
 
 - 06 ~ 11은 위 순서대로 한 번만 실행하면 됨 (07, 08, 11은 v1을, 09는 v2를, 10은 v3를 읽음. 11은 마지막에 v5와 비교하므로 10 다음에 실행)
 - 03은 첫 셀의 `DATA_FILE`, `ZONE`만 바꿔서 여러 번 실행함
+- 05는 03과 같은 `DATA_FILE`, `ZONE`, `USE_` 값으로 실행함. 모델 파일은 git에 올리지 않고 `models/README.md`대로 관제 저장소로 옮김
+- 03의 공통 움직임 컬럼은 구역 그룹별로 만듦 (건조·예열 Z1·Z2, 가열·균열 Z3 ~ Z6, 과시효 Z7·Z8. CLN, Z9, COOLING은 그룹 없음)
 - 03의 v6 입력은 기본 + 공통 움직임(`USE_COMMON`) + 10분 이동통계(`USE_ROLL10`) + 지난 값 Z(`USE_ZPAST`) + OP 공통 움직임(`USE_OPCOMMON`) + 로 전체 동시 이상(`USE_FURNACE`) + 제어 어긋남(`USE_CONTROL`). 포화비율, 경과시간, 변화율 스위치는 실험 기록용으로 꺼 둠. v1 ~ v5 결과를 다시 만들 때는 `USE_`를 모두 False로 (결과 이름 끝에 켠 묶음이 붙음)
 
 ## v1 ~ v6 차이
@@ -29,7 +32,7 @@
 | v3 | 원기록 (1초) | v1과 같음 | v2 + 새로 찾은 공통 움직임 해제 0 |
 | v4 | 1분 | 1분 안에 후보가 하나라도 있으면 1 | v2를 1분으로 묶음 |
 | v5 | 1분 | v4와 같음 | v3를 1분으로 묶음 |
-| v6 | 1분 | v4와 같음 | v3 + 팀 판단(1, 0)을 1분으로 묶음 |
+| v6 | 1분 | v4와 같음 | v3 + 팀 판단(T 1, 0)과 전 구역 검토(S 0)를 1분으로 묶음 |
 | v7 | 1분 | v4와 같음 | v6 + 모델 후보(M 번호)의 팀 판단을 1분으로 묶음. 검토 표에 v7 행이 없으면 v6와 같음 |
 
 - `LABEL`은 CSV에 없음. 모델 노트북에서 `DOMAIN_LABEL`이 있으면 그 값, 없으면 `STAT_LABEL`로 만듦

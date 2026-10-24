@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<rect width="1200" height="300" rx="18" fill="#ffffff"/>
+<text x="600.0" y="40" font-size="17" fill="#15201a" font-weight="bold" text-anchor="middle" >CP(가스 분위기) 센서가 혼자 튄 LOT 뒤에는 정비가 따라왔습니다 (2024년)</text>
+<line x1="80" y1="150" x2="1120" y2="150" stroke="#c3cfc1" stroke-width="2"/>
+<line x1="82" y1="144" x2="82" y2="156" stroke="#c3cfc1"/>
+<text x="85.8415300546448" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >1월</text>
+<line x1="170" y1="144" x2="170" y2="156" stroke="#c3cfc1"/>
+<text x="173.92896174863387" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >2월</text>
+<line x1="253" y1="144" x2="253" y2="156" stroke="#c3cfc1"/>
+<text x="256.3333333333333" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >3월</text>
+<line x1="341" y1="144" x2="341" y2="156" stroke="#c3cfc1"/>
+<text x="344.42076502732243" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >4월</text>
+<line x1="426" y1="144" x2="426" y2="156" stroke="#c3cfc1"/>
+<text x="429.66666666666663" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >5월</text>
+<line x1="514" y1="144" x2="514" y2="156" stroke="#c3cfc1"/>
+<text x="517.7540983606557" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >6월</text>
+<line x1="600" y1="144" x2="600" y2="156" stroke="#c3cfc1"/>
+<text x="603.0" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >7월</text>
+<line x1="688" y1="144" x2="688" y2="156" stroke="#c3cfc1"/>
+<text x="691.0874316939891" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >8월</text>
+<line x1="776" y1="144" x2="776" y2="156" stroke="#c3cfc1"/>
+<text x="779.1748633879781" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >9월</text>
+<line x1="861" y1="144" x2="861" y2="156" stroke="#c3cfc1"/>
+<text x="864.4207650273223" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >10월</text>
+<line x1="949" y1="144" x2="949" y2="156" stroke="#c3cfc1"/>
+<text x="952.5081967213115" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >11월</text>
+<line x1="1034" y1="144" x2="1034" y2="156" stroke="#c3cfc1"/>
+<text x="1037.754098360656" y="174" font-size="11" fill="#5a6b5c" font-weight="normal" text-anchor="start" >12월</text>
+<circle cx="85" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="270" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="375" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="384" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="432" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="537" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="554" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="617" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="796" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="909" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="958" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="983" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="1014" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="1111" cy="150" r="4" fill="#5a6b5c"/>
+<circle cx="378" cy="150" r="9" fill="#d8323a" fill-opacity="0.25" stroke="#d8323a" stroke-width="2"><animate attributeName="r" values="9;15;9" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<line x1="378" y1="150" x2="378" y2="100" stroke="#d8323a" stroke-dasharray="3 3"/>
+<text x="378.3606557377049" y="92" font-size="13" fill="#15201a" font-weight="bold" text-anchor="middle" >037 CP 튐 (T09)</text>
+<text x="378.3606557377049" y="110" font-size="12" fill="#e07b00" font-weight="normal" text-anchor="middle" >→ 6시간 뒤 상태 점검</text>
+<circle cx="537" cy="150" r="9" fill="#d8323a" fill-opacity="0.25" stroke="#d8323a" stroke-width="2"><animate attributeName="r" values="9;15;9" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<line x1="537" y1="150" x2="537" y2="193" stroke="#d8323a" stroke-dasharray="3 3"/>
+<text x="537.4863387978141" y="215" font-size="13" fill="#15201a" font-weight="bold" text-anchor="middle" >058 CP 하강 (T12)</text>
+<text x="537.4863387978141" y="233" font-size="12" fill="#e07b00" font-weight="normal" text-anchor="middle" >→ 22시간 뒤 O링·오일씰 교체</text>
+<circle cx="619" cy="150" r="9" fill="#d8323a" fill-opacity="0.25" stroke="#d8323a" stroke-width="2"><animate attributeName="r" values="9;15;9" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<line x1="619" y1="150" x2="619" y2="100" stroke="#d8323a" stroke-dasharray="3 3"/>
+<text x="619.8907103825137" y="92" font-size="13" fill="#15201a" font-weight="bold" text-anchor="middle" >069 CP 급등 (T01)</text>
+<text x="619.8907103825137" y="110" font-size="12" fill="#e07b00" font-weight="normal" text-anchor="middle" >→ 2시간 뒤 전기 BM, O링 교체 · 16일 뒤 가스 분석계 셀 교체</text>
+<circle cx="798" cy="150" r="9" fill="#d8323a" fill-opacity="0.25" stroke="#d8323a" stroke-width="2"><animate attributeName="r" values="9;15;9" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0.05;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<line x1="798" y1="150" x2="798" y2="193" stroke="#d8323a" stroke-dasharray="3 3"/>
+<text x="798.9071038251366" y="215" font-size="13" fill="#15201a" font-weight="bold" text-anchor="middle" >091 CP 튐 (T32)</text>
+<text x="798.9071038251366" y="233" font-size="12" fill="#e07b00" font-weight="normal" text-anchor="middle" >→ 2.5일 뒤 전기 BM 절연 저하</text>
+<text x="600.0" y="282" font-size="12" fill="#5a6b5c" font-weight="normal" text-anchor="middle" >CP 이상 뒤에 부품을 간 두 번 모두 O링(밀봉)이 들어 있고, 069는 CP를 재는 가스 분석계 셀까지 이어집니다 · 함께 나타났다는 뜻이지 원인 증명은 아닙니다</text>
+</svg>

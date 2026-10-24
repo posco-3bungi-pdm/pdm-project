@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<rect width="1200" height="380" rx="18" fill="#0b0f0c"/>
+<defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#a8ff3e" stop-opacity="0"/><stop offset="1" stop-color="#a8ff3e" stop-opacity="0.18"/></linearGradient></defs>
+<rect width="1200" height="380" rx="18" fill="url(#g)"/>
+<text x="56" y="86" font-size="20" fill="#9fb39d" font-weight="normal" text-anchor="start" letter-spacing="2">CAL01 Predictive Maintenance</text>
+<text x="56" y="140" font-size="40" fill="#e9f2e8" font-weight="bold" text-anchor="start" >연속 소둔로의 흐름을 보고,</text>
+<text x="56" y="190" font-size="40" fill="#a8ff3e" font-weight="bold" text-anchor="start" >같은 구간을 팀이 함께 판단합니다</text>
+<text x="56" y="232" font-size="17" fill="#9fb39d" font-weight="normal" text-anchor="start" >3σ 통계 후보 → 팀 판단 → 규칙으로 정답을 다듬고, 시간 순서를 지켜 모델을 시험합니다</text>
+<rect x="56" y="262" width="269" height="34" rx="17" fill="#5ec8ff" fill-opacity="0.12" stroke="#5ec8ff" stroke-opacity="0.6"/>
+<text x="190.79999999999998" y="285" font-size="14" fill="#e9f2e8" font-weight="normal" text-anchor="middle" >14 LOT · 345,390 원기록 · 21 센서</text>
+<rect x="337" y="262" width="288" height="34" rx="17" fill="#ffb347" fill-opacity="0.12" stroke="#ffb347" stroke-opacity="0.6"/>
+<text x="481.59999999999997" y="285" font-size="14" fill="#e9f2e8" font-weight="normal" text-anchor="middle" >팀 판단 33건 · 전 구역 검토 81건 · 규칙 2개</text>
+<rect x="637" y="262" width="398" height="34" rx="17" fill="#a8ff3e" fill-opacity="0.12" stroke="#a8ff3e" stroke-opacity="0.6"/>
+<text x="836.8" y="285" font-size="14" fill="#e9f2e8" font-weight="normal" text-anchor="middle" >Z4 F1 0.60 (Z-score) · 0.59 (RandomForest)</text>
+<rect x="56" y="318" width="92" height="34" rx="8" fill="#5ec8ff" fill-opacity="0.18" stroke="#5ec8ff" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="0.00s" repeatCount="indefinite"/></rect>
+<text x="102.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >CLN</text>
+<rect x="154" y="318" width="92" height="34" rx="8" fill="#ffb347" fill-opacity="0.18" stroke="#ffb347" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="0.45s" repeatCount="indefinite"/></rect>
+<text x="200.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z1</text>
+<rect x="252" y="318" width="92" height="34" rx="8" fill="#ffb347" fill-opacity="0.18" stroke="#ffb347" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="0.90s" repeatCount="indefinite"/></rect>
+<text x="298.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z2</text>
+<rect x="350" y="318" width="92" height="34" rx="8" fill="#ff5a5f" fill-opacity="0.18" stroke="#ff5a5f" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="1.35s" repeatCount="indefinite"/></rect>
+<text x="396.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z3</text>
+<rect x="448" y="318" width="92" height="34" rx="8" fill="#ff5a5f" fill-opacity="0.18" stroke="#ff5a5f" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="1.80s" repeatCount="indefinite"/></rect>
+<text x="494.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z4</text>
+<rect x="546" y="318" width="92" height="34" rx="8" fill="#ff5a5f" fill-opacity="0.18" stroke="#ff5a5f" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="2.25s" repeatCount="indefinite"/></rect>
+<text x="592.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z5</text>
+<rect x="644" y="318" width="92" height="34" rx="8" fill="#ff5a5f" fill-opacity="0.18" stroke="#ff5a5f" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="2.70s" repeatCount="indefinite"/></rect>
+<text x="690.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z6</text>
+<rect x="742" y="318" width="92" height="34" rx="8" fill="#ffb347" fill-opacity="0.18" stroke="#ffb347" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="3.15s" repeatCount="indefinite"/></rect>
+<text x="788.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z7</text>
+<rect x="840" y="318" width="92" height="34" rx="8" fill="#ffb347" fill-opacity="0.18" stroke="#ffb347" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="3.60s" repeatCount="indefinite"/></rect>
+<text x="886.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z8</text>
+<rect x="938" y="318" width="92" height="34" rx="8" fill="#ffb347" fill-opacity="0.18" stroke="#ffb347" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="4.05s" repeatCount="indefinite"/></rect>
+<text x="984.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >Z9</text>
+<rect x="1036" y="318" width="92" height="34" rx="8" fill="#5ec8ff" fill-opacity="0.18" stroke="#5ec8ff" stroke-opacity="0.5"><animate attributeName="fill-opacity" values="0.18;0.9;0.18" keyTimes="0;0.5;1" dur="6s" begin="4.50s" repeatCount="indefinite"/></rect>
+<text x="1082.0" y="340" font-size="14" fill="#e9f2e8" font-weight="bold" text-anchor="middle" >OUT</text>
+<line x1="26" y1="335" x2="1154" y2="335" stroke="#34463a" stroke-width="2" stroke-dasharray="6 6"/>
+<circle r="6" fill="#a8ff3e"><animateMotion dur="6s" repeatCount="indefinite" path="M 26 335 L 1154 335"/></circle>
+</svg>

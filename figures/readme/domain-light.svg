@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" font-family="Pretendard, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif">
+<defs>
+<filter id="shadow" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.18"/></filter>
+<filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.18"/></filter>
+<filter id="inset" x="-10%" y="-10%" width="120%" height="130%"><feOffset dx="0" dy="3"/><feGaussianBlur stdDeviation="3" result="ob"/><feComposite operator="out" in="SourceGraphic" in2="ob" result="inv"/><feFlood flood-color="#000" flood-opacity="0.55" result="col"/><feComposite operator="in" in="col" in2="inv" result="sh"/><feComposite operator="over" in="sh" in2="SourceGraphic"/></filter>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.6 0"/></filter>
+<linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f9f4"/><stop offset="1" stop-color="#eef2ea"/></linearGradient>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef1ea"/><stop offset="1" stop-color="#e4e9df"/></linearGradient>
+<radialGradient id="coin" cx="0.35" cy="0.3" r="0.8"><stop offset="0" stop-color="#ffffff" stop-opacity="0.9"/><stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#1a2a1e" stop-opacity="0.35"/></radialGradient>
+</defs>
+<rect width="1200" height="320" rx="22" fill="url(#bg)"/>
+<rect width="1200" height="320" rx="22" filter="url(#grain)" opacity="0.06"/>
+<circle cx="100" cy="330" r="150" fill="#d9741a" opacity="0.05"/>
+<circle cx="74" cy="348" r="122" fill="#d9741a" opacity="0.08"/>
+<circle cx="48" cy="366" r="94" fill="#d9741a" opacity="0.12"/>
+<text x="57" y="50" font-size="18" fill="#1a2a1e" font-weight="bold" text-anchor="start" opacity="0.18">CP(가스 분위기) 센서가 혼자 튄 LOT 뒤에는 정비가 따라옴 (2024년)</text>
+<text x="55" y="47" font-size="18" fill="#ffffff" font-weight="bold" text-anchor="start" opacity="0.9">CP(가스 분위기) 센서가 혼자 튄 LOT 뒤에는 정비가 따라옴 (2024년)</text>
+<text x="56" y="48" font-size="18" fill="#17221b" font-weight="bold" text-anchor="start" >CP(가스 분위기) 센서가 혼자 튄 LOT 뒤에는 정비가 따라옴 (2024년)</text>
+<rect x="56" y="148" width="1088" height="44" rx="22" fill="#d9dfd4" filter="url(#inset)"/>
+<path d="M 78 193 L 1122 193" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<line x1="80" y1="170" x2="1120" y2="170" stroke="#1a2a1e" stroke-opacity="0.18" stroke-width="3"/>
+<line x1="80" y1="172" x2="1120" y2="172" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<line x1="82" y1="162" x2="82" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="86.8415300546448" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >1월</text>
+<line x1="170" y1="162" x2="170" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="174.92896174863387" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >2월</text>
+<line x1="253" y1="162" x2="253" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="257.3333333333333" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >3월</text>
+<line x1="341" y1="162" x2="341" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="345.42076502732243" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >4월</text>
+<line x1="426" y1="162" x2="426" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="430.66666666666663" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >5월</text>
+<line x1="514" y1="162" x2="514" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="518.7540983606557" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >6월</text>
+<line x1="600" y1="162" x2="600" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="604.0" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >7월</text>
+<line x1="688" y1="162" x2="688" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="692.0874316939891" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >8월</text>
+<line x1="776" y1="162" x2="776" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="780.1748633879781" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >9월</text>
+<line x1="861" y1="162" x2="861" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="865.4207650273223" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >10월</text>
+<line x1="949" y1="162" x2="949" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="953.5081967213115" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >11월</text>
+<line x1="1034" y1="162" x2="1034" y2="178" stroke="#5b6b5d" stroke-opacity="0.5"/>
+<text x="1038.754098360656" y="208" font-size="11" fill="#5b6b5d" font-weight="normal" text-anchor="start" >12월</text>
+<circle cx="85" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="85" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="270" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="270" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="375" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="375" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="384" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="384" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="432" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="432" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="537" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="537" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="554" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="554" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="617" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="617" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="796" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="796" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="909" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="909" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="958" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="958" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="983" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="983" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="1014" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="1014" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="1111" cy="170" r="5" fill="#5b6b5d" filter="url(#shadow-sm)"/>
+<circle cx="1111" cy="170" r="5" fill="url(#coin)"/>
+<circle cx="378" cy="170" r="10" fill="#d8323a" fill-opacity="0.25"><animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle cx="378" cy="170" r="8" fill="#d8323a" filter="url(#shadow-sm)"/>
+<circle cx="378" cy="170" r="8" fill="url(#coin)"/>
+<line x1="378" y1="158" x2="378" y2="110" stroke="#d8323a" stroke-opacity="0.7" stroke-dasharray="3 3"/>
+<rect x="319" y="72" width="117" height="46" rx="10" fill="url(#plate)" filter="url(#shadow)"/>
+<rect x="319" y="72" width="117" height="46" rx="10" fill="none" stroke="#d8323a" stroke-opacity="0.55" stroke-width="1.5"/>
+<path d="M 320 108 L 320 82 Q 320 73 329 73 L 427 73" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<path d="M 329 117 L 427 117 Q 436 117 436 108 L 436 82" fill="none" stroke="#1a2a1e" stroke-opacity="0.18" stroke-width="1.5"/>
+<text x="379.3606557377049" y="92" font-size="13" fill="#1a2a1e" font-weight="bold" text-anchor="middle" opacity="0.18">037 CP 튐 (T09)</text>
+<text x="377.3606557377049" y="89" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.9">037 CP 튐 (T09)</text>
+<text x="378.3606557377049" y="90" font-size="13" fill="#17221b" font-weight="bold" text-anchor="middle" >037 CP 튐 (T09)</text>
+<text x="378.3606557377049" y="108" font-size="11.5" fill="#d9741a" font-weight="normal" text-anchor="middle" >→ 6시간 뒤 상태 점검</text>
+<circle cx="537" cy="170" r="10" fill="#d8323a" fill-opacity="0.25"><animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle cx="537" cy="170" r="8" fill="#d8323a" filter="url(#shadow-sm)"/>
+<circle cx="537" cy="170" r="8" fill="url(#coin)"/>
+<line x1="537" y1="182" x2="537" y2="210" stroke="#d8323a" stroke-opacity="0.7" stroke-dasharray="3 3"/>
+<rect x="463" y="214" width="147" height="46" rx="10" fill="url(#plate)" filter="url(#shadow)"/>
+<rect x="463" y="214" width="147" height="46" rx="10" fill="none" stroke="#d8323a" stroke-opacity="0.55" stroke-width="1.5"/>
+<path d="M 464 250 L 464 224 Q 464 215 473 215 L 601 215" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<path d="M 473 259 L 601 259 Q 610 259 610 250 L 610 224" fill="none" stroke="#1a2a1e" stroke-opacity="0.18" stroke-width="1.5"/>
+<text x="538.4863387978141" y="234" font-size="13" fill="#1a2a1e" font-weight="bold" text-anchor="middle" opacity="0.18">058 CP 하강 (T12)</text>
+<text x="536.4863387978141" y="231" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.9">058 CP 하강 (T12)</text>
+<text x="537.4863387978141" y="232" font-size="13" fill="#17221b" font-weight="bold" text-anchor="middle" >058 CP 하강 (T12)</text>
+<text x="537.4863387978141" y="250" font-size="11.5" fill="#d9741a" font-weight="normal" text-anchor="middle" >→ 22시간 뒤 O링·오일씰 교체</text>
+<circle cx="619" cy="170" r="10" fill="#d8323a" fill-opacity="0.25"><animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle cx="619" cy="170" r="8" fill="#d8323a" filter="url(#shadow-sm)"/>
+<circle cx="619" cy="170" r="8" fill="url(#coin)"/>
+<line x1="619" y1="158" x2="619" y2="110" stroke="#d8323a" stroke-opacity="0.7" stroke-dasharray="3 3"/>
+<rect x="464" y="72" width="310" height="46" rx="10" fill="url(#plate)" filter="url(#shadow)"/>
+<rect x="464" y="72" width="310" height="46" rx="10" fill="none" stroke="#d8323a" stroke-opacity="0.55" stroke-width="1.5"/>
+<path d="M 465 108 L 465 82 Q 465 73 474 73 L 764 73" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<path d="M 474 117 L 764 117 Q 773 117 773 108 L 773 82" fill="none" stroke="#1a2a1e" stroke-opacity="0.18" stroke-width="1.5"/>
+<text x="620.8907103825137" y="92" font-size="13" fill="#1a2a1e" font-weight="bold" text-anchor="middle" opacity="0.18">069 CP 급등 (T01)</text>
+<text x="618.8907103825137" y="89" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.9">069 CP 급등 (T01)</text>
+<text x="619.8907103825137" y="90" font-size="13" fill="#17221b" font-weight="bold" text-anchor="middle" >069 CP 급등 (T01)</text>
+<text x="619.8907103825137" y="108" font-size="11.5" fill="#d9741a" font-weight="normal" text-anchor="middle" >→ 2시간 뒤 전기 BM, O링 교체 · 16일 뒤 가스 분석계 셀 교체</text>
+<circle cx="798" cy="170" r="10" fill="#d8323a" fill-opacity="0.25"><animate attributeName="r" values="10;18;10" dur="2.4s" repeatCount="indefinite"/><animate attributeName="fill-opacity" values="0.25;0;0.25" dur="2.4s" repeatCount="indefinite"/></circle>
+<circle cx="798" cy="170" r="8" fill="#d8323a" filter="url(#shadow-sm)"/>
+<circle cx="798" cy="170" r="8" fill="url(#coin)"/>
+<line x1="798" y1="182" x2="798" y2="210" stroke="#d8323a" stroke-opacity="0.7" stroke-dasharray="3 3"/>
+<rect x="717" y="214" width="162" height="46" rx="10" fill="url(#plate)" filter="url(#shadow)"/>
+<rect x="717" y="214" width="162" height="46" rx="10" fill="none" stroke="#d8323a" stroke-opacity="0.55" stroke-width="1.5"/>
+<path d="M 718 250 L 718 224 Q 718 215 727 215 L 869 215" fill="none" stroke="#ffffff" stroke-opacity="0.9" stroke-width="1.5"/>
+<path d="M 727 259 L 869 259 Q 878 259 878 250 L 878 224" fill="none" stroke="#1a2a1e" stroke-opacity="0.18" stroke-width="1.5"/>
+<text x="799.9071038251366" y="234" font-size="13" fill="#1a2a1e" font-weight="bold" text-anchor="middle" opacity="0.18">091 CP 튐 (T32)</text>
+<text x="797.9071038251366" y="231" font-size="13" fill="#ffffff" font-weight="bold" text-anchor="middle" opacity="0.9">091 CP 튐 (T32)</text>
+<text x="798.9071038251366" y="232" font-size="13" fill="#17221b" font-weight="bold" text-anchor="middle" >091 CP 튐 (T32)</text>
+<text x="798.9071038251366" y="250" font-size="11.5" fill="#d9741a" font-weight="normal" text-anchor="middle" >→ 2.5일 뒤 전기 BM 절연 저하</text>
+<text x="600.0" y="304" font-size="12" fill="#5b6b5d" font-weight="normal" text-anchor="middle" >CP 이상 뒤에 부품을 간 두 번 모두 O링(밀봉)이 들어 있고, 069는 CP를 재는 가스 분석계 셀까지 이어짐 · 함께 나타났다는 뜻이지 원인 증명은 아님</text>
+</svg>

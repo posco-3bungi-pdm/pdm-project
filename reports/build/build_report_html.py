@@ -68,10 +68,10 @@ CSS = """
 @page :first { margin: 0; }
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-body { font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; font-size: 9.4pt; color: #333; line-height: 1.62; font-weight: 400; }
+body { font-family: "Noto Sans KR", "Malgun Gothic", sans-serif; font-size: 9.1pt; color: #333; line-height: 1.5; font-weight: 400; }
 a { color: #005f98; text-decoration: none; }
 code { font-family: Consolas, "Noto Sans KR", monospace; font-size: 8.4pt; color: #50545a; background: #f0f6fb; padding: 0 3pt; border-radius: 2pt; }
-p { margin: 0 0 7pt 0; }
+p { margin: 0 0 5pt 0; }
 b { font-weight: 700; }
 
 /* 표지 */
@@ -102,35 +102,36 @@ b { font-weight: 700; }
 .contact { margin-top: 5mm; }
 
 /* 장·절 */
-.chapter { page-break-before: always; }
-.chapter-bar { background: #005e97; color: #fff; font-size: 10pt; font-weight: 500; padding: 4pt 12pt; border-radius: 2pt; margin: 0 0 7mm 0; }
+.chapter { margin-top: 5mm; }
+.chapter.first { page-break-before: always; margin-top: 0; }
+.chapter-bar { background: #005e97; color: #fff; font-size: 10pt; font-weight: 500; padding: 4pt 12pt; border-radius: 2pt; margin: 0 0 4mm 0; page-break-after: avoid; break-after: avoid; }
 .chapter-bar span { margin-left: 10pt; }
-.sec { display: flex; align-items: center; margin: 7mm 0 1.5mm 0; page-break-after: avoid; }
+.sec { display: flex; align-items: center; margin: 4.5mm 0 1mm 0; page-break-after: avoid; }
 .sec .badge { width: 47pt; height: 29pt; border-radius: 4pt; background: #e9f2f9; color: #005f98; font-size: 14pt; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-right: 12pt; }
 .sec .name { font-size: 16.5pt; font-weight: 500; color: #333; }
-.sec-label { font-size: 8.1pt; color: #5894be; margin: 0 0 3mm 0; break-after: avoid; page-break-after: avoid; }
-h4 { font-size: 10.7pt; font-weight: 500; color: #005f98; margin: 5mm 0 2mm 0; page-break-after: avoid; }
+.sec-label { font-size: 8.1pt; color: #5894be; margin: 0 0 2mm 0; break-after: avoid; page-break-after: avoid; }
+h4 { font-size: 10.4pt; font-weight: 500; color: #005f98; margin: 3.5mm 0 1.5mm 0; page-break-after: avoid; }
 
 /* 상자 */
-.callout { background: #f0f6fb; border-left: 3pt solid #5793bd; padding: 7pt 12pt; margin: 2mm 0 4mm 0; font-size: 9.6pt; page-break-inside: avoid; }
+.callout { background: #f0f6fb; border-left: 3pt solid #5793bd; padding: 5pt 10pt; margin: 2mm 0 3mm 0; font-size: 9.3pt; page-break-inside: avoid; }
 .callout.key { background: #e9f4f9; border-left: none; color: #005f98; border-radius: 2pt; }
 .note { background: #f3f5f7; color: #606a73; font-size: 8.6pt; padding: 5pt 10pt; border-radius: 2pt; margin: 0 0 4mm 0; }
 
 /* 목록 */
-ul { margin: 0 0 4mm 0; padding-left: 14pt; }
-li { margin: 0 0 2.2pt 0; }
+ul { margin: 0 0 3mm 0; padding-left: 14pt; }
+li { margin: 0 0 1.5pt 0; }
 ul ul { margin: 1.5pt 0 1.5pt 0; }
 li::marker { color: #5894be; }
 .tag { font-weight: 700; font-size: 8.6pt; }
 .t-fact { color: #005f98; } .t-team { color: #5894be; } .t-hyp { color: #606a73; }
 
 /* 표 */
-.tcap { font-size: 8.1pt; color: #005f98; font-weight: 500; margin: 3mm 0 1.5mm 0; page-break-after: avoid; break-after: avoid; }
-table.data { width: 100%; border-collapse: collapse; margin: 0 0 5mm 0; font-size: 8.2pt; page-break-inside: avoid; }
-table.data th { background: #5793bd; color: #fff; font-weight: 500; text-align: left; padding: 3.5pt 7pt; font-size: 8.3pt; }
+.tcap { font-size: 8.1pt; color: #005f98; font-weight: 500; margin: 2.5mm 0 1.2mm 0; page-break-after: avoid; break-after: avoid; }
+table.data { width: 100%; border-collapse: collapse; margin: 0 0 3mm 0; font-size: 7.9pt; page-break-inside: avoid; }
+table.data th { background: #5793bd; color: #fff; font-weight: 500; text-align: left; padding: 3pt 6pt; font-size: 8pt; }
 table.data th, table.data td { border-bottom: 0.35pt solid #cfd4d8; }
 table.data th + th, table.data td + td { border-left: 0.3pt solid #cfd4d8; }
-table.data td { padding: 3.2pt 7pt; vertical-align: top; line-height: 1.45; }
+table.data td { padding: 2.6pt 6pt; vertical-align: top; line-height: 1.4; }
 table.data td:first-child { background: #cadbe9; color: #005f98; }
 table.data.plain td:first-child { background: transparent; color: #333; }
 table.data.nw td:first-child, table.data.nw th:first-child { white-space: nowrap; }
@@ -140,7 +141,7 @@ table.data thead { display: table-header-group; }
 .keep { page-break-inside: avoid; }
 
 /* 그림 */
-figure { margin: 2mm 0 5mm 0; page-break-inside: avoid; text-align: center; }
+figure { margin: 1.5mm 0 3.5mm 0; page-break-inside: avoid; text-align: center; }
 figure img { max-width: 100%; }
 figcaption { font-size: 8.1pt; color: #606a73; margin-top: 2mm; text-align: left; }
 figcaption b { color: #005f98; font-weight: 500; }
@@ -292,14 +293,19 @@ def render_table(caption, rows, plain=False):
 
 def render_image(cap, path):
     full = os.path.join(ROOT, path)
+    width = 100
+    mw = re.search(r"\s*\{w=(\d+)\}\s*$", cap)  # 알트 끝의 {w=60}은 그림 폭(%)
+    if mw:
+        width = int(mw.group(1))
+        cap = cap[: mw.start()]
     m = re.match(r"^((?:그림) [\d\-]+\.)\s*(.*)$", cap)
     label = "<b>%s</b> %s" % (m.group(1), inline(m.group(2))) if m else inline(cap)
-    return '<figure><img src="%s"><figcaption>%s</figcaption></figure>' % (
-        html.escape(pathlib.Path(full).as_uri()), label)
+    return '<figure><img src="%s" style="width:%d%%"><figcaption>%s</figcaption></figure>' % (
+        html.escape(pathlib.Path(full).as_uri()), width, label)
 
 
 def render_chapter(ch, toc_pages):
-    out = ['<div class="chapter" id="ch%d">' % ch["num"]]
+    out = ['<div class="chapter%s" id="ch%d">' % (" first" if ch["num"] == 1 else "", ch["num"])]
     out.append('<div class="chapter-bar">CHAPTER %02d<span>%s</span></div>' % (ch["num"], html.escape(ch["title"])))
     key_mode = False
     head = ""  # 절 제목은 첫 내용과 한 묶음으로 두어 쪽 끝에 혼자 남지 않게 함
@@ -438,21 +444,23 @@ def stamp(pdf_path, out_path, chapters):
         if m:
             cur_ch = int(m.group(1))
             cur_sec = ""
-        # 이 쪽에 나오는 절 제목 중 가장 위의 것 (없으면 앞 쪽의 절을 이어 씀)
-        best = None
+        # 경로줄에는 이 쪽의 첫 절을, 다음 쪽으로는 이 쪽의 마지막 절을 넘김
+        found = []
         for chn, name in sections:
             if chn != cur_ch:
                 continue
             hits = page.search_for(name)
             if hits:
-                y = min(r.y0 for r in hits)
-                if best is None or y < best[0]:
-                    best = (y, name)
-        if best:
-            cur_sec = best[1]
+                found.append((min(r.y0 for r in hits), name))
+        if found:
+            found.sort()
+            page_sec = found[0][1]
+            cur_sec = found[-1][1]
+        else:
+            page_sec = cur_sec
         if i == 1:
             cur_ch = 0
-            cur_sec = "목차"
+            cur_sec = page_sec = "목차"
         shape = page.new_shape()
         # 머리띠
         shape.draw_rect(fitz.Rect(0, 0, width, 66))
@@ -473,8 +481,8 @@ def stamp(pdf_path, out_path, chapters):
         # 경로줄
         if not cur_ch:
             crumb = "개요  /  목차"
-        elif cur_sec:
-            crumb = "%s  /  %s" % (titles.get(cur_ch, ""), cur_sec)
+        elif page_sec:
+            crumb = "%s  /  %s" % (titles.get(cur_ch, ""), page_sec)
         else:
             crumb = titles.get(cur_ch, "")
         shape.insert_text(fitz.Point(x0, 81.5), crumb, fontsize=8, fontname="NotoKR", fontfile=font_file, color=GRAY)

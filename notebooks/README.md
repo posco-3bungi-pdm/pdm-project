@@ -13,7 +13,7 @@
 | 7 | [namelesspark/11](namelesspark/11_cal01_base_v6.ipynb) | v3 + 팀 판단을 1분으로 묶음 | `cal01_base_v6.csv` |
 | 7-2 | [namelesspark/12](namelesspark/12_if_candidates.ipynb) | IsolationForest 후보 목록 (검토 사이트에 올릴 것) | `if_candidates.csv` |
 | 7-3 | [namelesspark/13](namelesspark/13_cal01_base_v7.ipynb) | v6 + 모델 후보의 팀 판단 + 규칙 해제 2개를 1분으로 묶음 | `cal01_base_v7.csv` |
-| 7-4 | [namelesspark/14](namelesspark/14_candidate_rf.ipynb) | 2단계: Z-score 경보 묶음(후보)을 RandomForest가 팀 판단으로 거름. 팀이 안 본 후보에 점수 | `candidates_zscore.csv`, `candidate_rf_ranked.csv` |
+| 7-4 | [namelesspark/14](namelesspark/14_candidate_rf.ipynb) | 2단계: Z-score 경보 묶음(후보)을 RandomForest가 팀 판단으로 거름. 팀이 안 본 후보에 점수. 조업 조건 특징(강종변경 뒤 경과 분)과 학습 범위 비교(초반 LOT으로 학습해 후반 평가, 같은 강종 계열만 학습) | `candidates_zscore.csv`, `candidate_rf_ranked.csv` |
 | 8 | [sayletskin/03](sayletskin/03_model_f1.ipynb) | Dummy, Z-score, IsolationForest, RandomForest 비교 | `model_results/파일명_구역_*.csv` |
 | 9 | [sayletskin/04](sayletskin/04_f1_summary.ipynb) | 버전별 F1 표, v5와 v6 비교 | 없음 (화면 표) |
 | 10 | [sayletskin/05](sayletskin/05_save_models.ipynb) | 관제용 모델 저장 (구역 하나씩, 03 결과가 있어야 함) | `models/<라벨 버전>/<입력 태그>/<구역>/`, `models/registry.json` |

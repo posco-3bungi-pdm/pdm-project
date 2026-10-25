@@ -1,0 +1,11 @@
+{
+  "label_version": "v7",
+  "input_tag": "final",
+  "updated": "2026-10-25",
+  "source": "notebooks/sayletskin/03_model_f1.ipynb (시험 LOT 10개 합산)",
+  "z4": {"positives": 165, "zscore_f1": 0.598, "if_f1": 0.489, "rf_f1": 0.585},
+  "z3": {"positives": 38, "zscore_f1": 0.160, "if_f1": 0.0, "rf_f1": 0.226},
+  "z5": {"positives": 36, "zscore_f1": 0.228, "if_f1": 0.234, "rf_f1": 0.299},
+  "mean_of_means": {"zscore": 0.302, "if": 0.212, "rf": 0.266},
+  "counts": {"lots": 14, "sensors": 21, "raw_rows": 345390, "minute_rows": 5938, "decisions": 395}
+}

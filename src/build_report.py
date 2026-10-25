@@ -1,23 +1,21 @@
-# 결과보고서 Markdown(reports/결과보고서.md)을 시계열 분석 보고서와 같은 양식의 HTML로 만들고,
-# Edge(헤드리스)로 PDF를 뽑은 뒤 쪽마다 상단 장 탭·경로줄·꼬리말·쪽 번호를 덧그림
-# 실행 (pdm-project 폴더에서): uv run --with pymupdf python reports/build/build_report_html.py
+"""결과보고서를 만든다. 작업 파일은 build/reports, 공개할 보고서는 reports에 둔다."""
+
+import argparse
 import html
 import os
 import pathlib
 import re
-import shutil
 import subprocess
-import sys
 import tempfile
 
-import fitz
+from urllib.parse import quote, unquote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))  # pdm-project
-ASSETS = os.path.join(HERE, "assets")
+ROOT = os.path.dirname(HERE)
+ASSETS = os.path.join(ROOT, "reports", "assets")
 MD = os.path.join(ROOT, "reports", "결과보고서.md")
-HTML_OUT = os.path.join(ROOT, "reports", "결과보고서.html")
-PDF_OUT = os.path.join(ROOT, "reports", "CAL01_소둔로 이상 탐지 결과보고서(3조 오운완).pdf")  # 시계열 분석 보고서 파일명과 같은 형식
+HTML_OUT = os.path.join(ROOT, "build", "reports", "결과보고서.html")
+PDF_OUT = os.path.join(ROOT, "build", "reports", "결과보고서.pdf")  # 시계열 분석 보고서 파일명과 같은 형식
 EDGE = os.environ.get("EDGE_EXE", r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 FONT_FILE = r"C:\Windows\Fonts\NotoSansKR-VF.ttf"
 FONT_FALLBACK = r"C:\Windows\Fonts\malgun.ttf"
@@ -40,28 +38,28 @@ COVER = {
     "eyebrow": "CONTINUOUS ANNEALING LINE",
     "title": ["2024", "CAL01", "ANOMALY", "DETECTION"],
     "subtitle": "Z-score baseline, team labels and RandomForest",
-    "subline": "연속소둔로 이상 탐지 결과보고서 · 정답 정의 v1~v7 · 모델 평가 · 오탐 미탐 사례 분석",
+    "subline": "연속소둔로 이상 탐지 결과보고서, 라벨 v1-v7, 모델 평가, 오탐 미탐 사례 분석",
     "rows": [
         ("대상 설비", "P1-CR1-CAL01  연속소둔로"),
-        ("관측 기간", "2024-01-02 ~ 2024-12-28  |  14개 LOT · 5,938분"),
-        ("자료 성격", "교육용 재현 데이터 · 실제 현장 실증 아님"),
-        ("부서·팀명", "소둔공정 데이터 분석  |  오운완"),
-        ("팀원", "김태구 · 김정렬 · 정수진 · 박민호 · 황유진"),
-        ("작성자", "박민호  |  2026. 10. 25.  (초안)"),
+        ("관측 기간", "2024-01-02 - 2024-12-28  |  14개 LOT, 5,938분"),
+        ("자료 성격", "교육용 재현 데이터, 실제 현장 실증 아님"),
+        ("부서, 팀명", "소둔공정 데이터 분석  |  오운완"),
+        ("팀원", "김태구, 김정렬, 정수진, 박민호, 황유진"),
+        ("작성자", "박민호  |  2026. 10. 26."),
         ("저장소", "github.com/posco-3bungi-pdm/pdm-project"),
     ],
 }
 CHAPTERS = [
     # (탭 이름, 목차 부제)
-    ("문제 정의", "대상 설비 · 이상 정의 · 성공 기준"),
-    ("데이터", "출처 · 기간 · 변수 · 품질 이슈"),
-    ("전처리", "1분 묶음 · 제외 구간 · 통계 후보"),
+    ("문제 정의", "대상 설비, 이상 정의, 성공 기준"),
+    ("데이터", "출처, 기간, 변수, 품질 이슈"),
+    ("전처리", "1분 묶음, 제외 구간, 통계 후보"),
     ("시계열", "공통 움직임과 CP 단독 튐"),
-    ("모델링", "분할 · 정답 v1~v7 · 기준 모델 · RF · 2단계"),
-    ("평가", "성능 표 · 혼동행렬 · LOT별 · 오탐 미탐 사례"),
-    ("보전 해석", "정비 이력 연결 · 활용 시나리오 · 임곗값"),
-    ("한계", "판단하지 못하는 것 · 다음 데이터"),
-    ("역할", "팀원별 담당 · 배운 점"),
+    ("모델링", "분할, 라벨 v1-v7, 기준 모델, RF, 2단계"),
+    ("평가", "성능 표, 혼동행렬, LOT별, 오탐 미탐 사례"),
+    ("보전 해석", "정비 이력 연결, 활용 시나리오, 임곗값"),
+    ("한계", "판단하지 못하는 것, 다음 데이터"),
+    ("역할", "팀원별 담당, 배운 점"),
 ]
 CSS = """
 @page { size: A4; margin: 35mm 15.9mm 17mm 15.9mm; }
@@ -101,12 +99,12 @@ b { font-weight: 700; }
 .toc-note { font-size: 8.2pt; color: #606a73; margin: 3mm 0 0 0; }
 .contact { margin-top: 5mm; }
 
-/* 장·절 */
+/* 장, 절 */
 .chapter { margin-top: 5mm; }
 .chapter.first { page-break-before: always; margin-top: 0; }
 .chapter-bar { background: #005e97; color: #fff; font-size: 10pt; font-weight: 500; padding: 4pt 12pt; border-radius: 2pt; margin: 0 0 4mm 0; page-break-after: avoid; break-after: avoid; }
 .chapter-bar span { margin-left: 10pt; }
-.sec { display: flex; align-items: center; margin: 4.5mm 0 1mm 0; page-break-after: avoid; }
+.sec { display: flex; align-items: center; margin: 4.5mm 0 1mm 0; page-break-after: avoid; page-break-inside: avoid; break-inside: avoid; }
 .sec .badge { width: 47pt; height: 29pt; border-radius: 4pt; background: #e9f2f9; color: #005f98; font-size: 14pt; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-right: 12pt; }
 .sec .name { font-size: 16.5pt; font-weight: 500; color: #333; }
 .sec-label { font-size: 8.1pt; color: #5894be; margin: 0 0 2mm 0; break-after: avoid; page-break-after: avoid; }
@@ -122,8 +120,6 @@ ul { margin: 0 0 3mm 0; padding-left: 14pt; }
 li { margin: 0 0 1.5pt 0; }
 ul ul { margin: 1.5pt 0 1.5pt 0; }
 li::marker { color: #5894be; }
-.tag { font-weight: 700; font-size: 8.6pt; }
-.t-fact { color: #005f98; } .t-team { color: #5894be; } .t-hyp { color: #606a73; }
 
 /* 표 */
 .tcap { font-size: 8.1pt; color: #005f98; font-weight: 500; margin: 2.5mm 0 1.2mm 0; page-break-after: avoid; break-after: avoid; }
@@ -147,8 +143,7 @@ figcaption { font-size: 8.1pt; color: #606a73; margin-top: 2mm; text-align: left
 figcaption b { color: #005f98; font-weight: 500; }
 """
 
-INLINE = re.compile(r"(\*\*.+?\*\*|`[^`]+`|\[사실\]|\[팀 해석\]|\[가설\]|https?://[^\s)]+)")
-TAG_CLASS = {"[사실]": "t-fact", "[팀 해석]": "t-team", "[가설]": "t-hyp"}
+INLINE = re.compile(r"(\*\*.+?\*\*|`[^`]+`|\[[^\]]+\]\((?:<[^>]+>|[^)]+)\)|https?://[^\s)]+)")
 
 
 def inline(text):
@@ -160,8 +155,15 @@ def inline(text):
             out.append("<b>" + inline(part[2:-2]) + "</b>")
         elif part.startswith("`") and part.endswith("`"):
             out.append("<code>" + html.escape(part[1:-1]) + "</code>")
-        elif part in TAG_CLASS:
-            out.append('<span class="tag %s">%s</span>' % (TAG_CLASS[part], part))
+        elif part.startswith("["):
+            match = re.fullmatch(r"\[([^\]]+)\]\((.+)\)", part)
+            label, link = match.groups()
+            link = link.strip("<>")
+            if not link.startswith(("http://", "https://", "#")):
+                full = os.path.normpath(os.path.join(os.path.dirname(MD), unquote(link)))
+                relative = os.path.relpath(full, ROOT).replace(os.sep, "/")
+                link = "https://github.com/posco-3bungi-pdm/pdm-project/blob/main/" + quote(relative)
+            out.append('<a href="%s">%s</a>' % (html.escape(link, quote=True), inline(label)))
         elif part.startswith("http"):
             out.append('<a href="%s">%s</a>' % (html.escape(part), html.escape(part)))
         else:
@@ -292,12 +294,11 @@ def render_table(caption, rows, plain=False):
 
 
 def render_image(cap, path):
-    full = os.path.join(ROOT, path)
-    width = 100
-    mw = re.search(r"\s*\{w=(\d+)\}\s*$", cap)  # 알트 끝의 {w=60}은 그림 폭(%)
-    if mw:
-        width = int(mw.group(1))
-        cap = cap[: mw.start()]
+    path = unquote(path.strip("<>"))
+    full = os.path.normpath(os.path.join(os.path.dirname(MD), path))
+    if not os.path.isfile(full):
+        raise FileNotFoundError("보고서 그림 없음: " + full)
+    width = 46 if os.path.basename(path) == "cover_3d.png" else 72 if "사례_240069" in path else 60
     m = re.match(r"^((?:그림) [\d\-]+\.)\s*(.*)$", cap)
     label = "<b>%s</b> %s" % (m.group(1), inline(m.group(2))) if m else inline(cap)
     return '<figure><img src="%s" style="width:%d%%"><figcaption>%s</figcaption></figure>' % (
@@ -314,7 +315,7 @@ def render_chapter(ch, toc_pages):
             _, sub, title = val
             key_mode = "종합" in title
             head = ('<div class="sec"><div class="badge">%02d</div><div class="name">%s</div></div>' % (int(sub), html.escape(title))
-                    + '<div class="sec-label">%s · %s.%s</div>' % (html.escape(ch["title"]), ch["num"], sub))
+                    + '<div class="sec-label">%s, %s.%s</div>' % (html.escape(ch["title"]), ch["num"], sub))
             continue
         if kind == "table":
             block = render_table(*val)
@@ -328,7 +329,7 @@ def render_chapter(ch, toc_pages):
             block = '<div class="note">%s</div>' % inline(val)
         else:
             block = "<p>%s</p>" % inline(val)
-        small = kind in ("para", "note", "subhead") or (kind == "bullets" and len(val) <= 3) or (kind == "table" and len(val[1]) <= 5)
+        small = kind in ("para", "note", "subhead") or (kind == "bullets" and len(val) <= 3) or (kind == "table" and len(val[1]) <= 10)
         if head and small:
             out.append('<div class="keep">' + head + block + "</div>")
             head = ""
@@ -365,7 +366,7 @@ def render_cover():
 
 def render_toc(chapters, toc_pages, preface):
     out = ['<div id="toc">', '<div class="toc-title">목차</div>',
-           '<div class="toc-flow">보고서 흐름 · 문제 정의 → 데이터와 전처리 → 시계열 분석 → 모델링 → 평가와 오류 분석 → 보전 관점 해석 → 한계와 역할</div>']
+           '<div class="toc-flow">보고서 흐름, 문제 정의 → 데이터와 전처리 → 시계열 분석 → 모델링 → 평가와 오류 분석 → 보전 관점 해석 → 한계와 역할</div>']
     for ch in chapters:
         if ch["num"] == 0:
             continue
@@ -390,18 +391,25 @@ def build_html(chapters, toc_pages):
 
 
 def print_pdf(pdf_path):
-    profile = os.path.join(tempfile.gettempdir(), "edge_profile_report")
+    profile = os.path.join(os.path.dirname(pdf_path), "edge_profile")
     url = pathlib.Path(HTML_OUT).as_uri()
     cmd = [EDGE, "--headless=new", "--disable-gpu", "--no-first-run", "--user-data-dir=" + profile,
            "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw", "--virtual-time-budget=6000",
            "--print-to-pdf=" + pdf_path, url]
-    subprocess.run(cmd, check=False, capture_output=True, timeout=120)
+    options = {}
+    if os.name == "nt":
+        options["creationflags"] = subprocess.CREATE_NO_WINDOW
+    result = subprocess.run(cmd, check=False, capture_output=True, timeout=120, **options)
+    if result.returncode != 0:
+        raise RuntimeError("Edge 인쇄 실패: " + result.stderr.decode("utf-8", errors="replace"))
     if not os.path.exists(pdf_path):
         raise SystemExit("Edge가 PDF를 만들지 못함: " + pdf_path)
 
 
 def chapter_pages(pdf_path):
     """각 장이 시작하는 쪽 번호 (1부터)"""
+    import pymupdf as fitz
+
     doc = fitz.open(pdf_path)
     found = {}
     for i, page in enumerate(doc):
@@ -414,6 +422,8 @@ def chapter_pages(pdf_path):
 
 
 def stamp(pdf_path, out_path, chapters):
+    import pymupdf as fitz
+
     doc = fitz.open(pdf_path)
     font_file = FONT_FILE if os.path.exists(FONT_FILE) else FONT_FALLBACK
     try:
@@ -440,9 +450,9 @@ def stamp(pdf_path, out_path, chapters):
             continue
         text = page.get_text()
         flat = re.sub(r"\s+", " ", text)
-        m = re.search(r"CHAPTER (\d{2})", text)
-        if m:
-            cur_ch = int(m.group(1))
+        chapter_hits = list(re.finditer(r"CHAPTER (\d{2})", text))
+        if chapter_hits:
+            cur_ch = int(chapter_hits[0].group(1))
             cur_sec = ""
         # 경로줄에는 이 쪽의 첫 절을, 다음 쪽으로는 이 쪽의 마지막 절을 넘김
         found = []
@@ -496,26 +506,49 @@ def stamp(pdf_path, out_path, chapters):
         tw = font.text_length(pno, fontsize=10)
         shape.insert_text(fitz.Point(x1 - tw, 819.5), pno, fontsize=10, fontname="NotoKR", fontfile=font_file, color=PAGE_NO)
         shape.commit()
+        # 한 쪽에서 다음 장이 시작하면 다음 쪽 머리말에는 그 장을 사용한다.
+        if chapter_hits:
+            last_chapter = int(chapter_hits[-1].group(1))
+            if last_chapter != cur_ch:
+                cur_ch = last_chapter
+                cur_sec = ""
     doc.save(out_path, garbage=3, deflate=True)
     return len(doc)
 
 
 def main():
-    lines = open(MD, encoding="utf-8").read().splitlines()
-    chapters = parse(lines)
-    tmp = tempfile.mkdtemp(prefix="report_html_")
-    pass1 = os.path.join(tmp, "pass1.pdf")
+    global MD, HTML_OUT, PDF_OUT, EDGE
+    parser = argparse.ArgumentParser(description="결과보고서 Markdown을 HTML 또는 PDF로 만든다")
+    parser.add_argument("--markdown", default=MD)
+    parser.add_argument("--output-dir", default=os.path.dirname(HTML_OUT))
+    parser.add_argument("--pdf", action="store_true", help="Edge와 PyMuPDF로 PDF도 생성")
+    parser.add_argument("--edge", default=EDGE, help="Edge 실행 파일 경로")
+    args = parser.parse_args()
+    MD = os.path.abspath(args.markdown)
+    output = os.path.abspath(args.output_dir)
+    os.makedirs(output, exist_ok=True)
+    HTML_OUT = os.path.join(output, "결과보고서.html")
+    PDF_OUT = os.path.join(output, "결과보고서.pdf")
+    EDGE = args.edge
+    with open(MD, encoding="utf-8") as source:
+        chapters = parse(source.read().splitlines())
+
     build_html(chapters, {})
-    print_pdf(pass1)
-    toc_pages = chapter_pages(pass1)
-    pass2 = os.path.join(tmp, "pass2.pdf")
-    build_html(chapters, toc_pages)
-    print_pdf(pass2)
-    n = stamp(pass2, PDF_OUT, chapters)
-    shutil.rmtree(tmp, ignore_errors=True)
     print("HTML", HTML_OUT)
+    if not args.pdf:
+        return
+    if not os.path.isfile(EDGE):
+        raise FileNotFoundError("Edge 실행 파일 없음. --edge로 지정: " + EDGE)
+    with tempfile.TemporaryDirectory(prefix="cal01_report_") as temporary:
+        pass1 = os.path.join(temporary, "pass1.pdf")
+        print_pdf(pass1)
+        toc_pages = chapter_pages(pass1)
+        build_html(chapters, toc_pages)
+        pass2 = os.path.join(temporary, "pass2.pdf")
+        print_pdf(pass2)
+        pages = stamp(pass2, PDF_OUT, chapters)
     print("PDF", PDF_OUT)
-    print("PAGES", n)
+    print("PAGES", pages)
     print("CHAPTER_PAGES", toc_pages)
 
 

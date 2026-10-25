@@ -367,6 +367,13 @@ figures/     검토된 그래프와 README 그림
 src/, tests/ 재사용 코드와 테스트
 ```
 
+## 보고서
+
+- [결과보고서](reports/결과보고서.md)
+- [시계열 분석 보고서 PDF](<reports/CAL01_소둔로 시계열 분석 보고서(3조 오운완).pdf>)
+- [실험 기록](docs/03-experiment-log.md)
+- [제출 PDF 목록](reports/README.md)
+
 ## 팀과 규칙
 
 - 3조 오운완<sub>(오늘 운전 완벽)</sub>: 김태구(팀장), 김정렬, 박민호, 정수진, 황유진

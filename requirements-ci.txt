@@ -1,2 +1,2 @@
-# Repository structure and notebook schema validation only.
+# 저장소 형식, 문서 링크, 표준 라이브러리 테스트에 사용함.
 nbformat==5.11.1

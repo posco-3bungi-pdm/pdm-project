@@ -2,16 +2,20 @@
 
 | 기능 | 언제 실행되는가 | 하는 일 |
 | --- | --- | --- |
-| CI / Repository checks | PR, main push, 수동 실행 | 필수 문서·파일 정책·Python 문법·노트북 스키마 검사 |
+| CI / Repository checks | PR, main push, 수동 실행 | 파일 정책, Python 문법, 노트북 형식, 문서 링크, 보고서 생성과 지표 계산 검사 |
 | nbstripout git 필터 | 로컬 `git add` | 노트북 출력·실행 번호를 커밋 사본에서 자동 제거 (clone 후 1회 등록) |
 | Assign new issues | 새 Issue | Write 이상 권한을 가진 작성자에게 자동 배정 |
 | Dependabot | 매주 | Actions·CI 패키지 업데이트 PR 생성 |
 
 ## CI의 범위
 
-현재는 원본 데이터 없이 실행 가능한 저장소 검사입니다. 데이터 파일이나 `.env`의 실수 커밋, 대용량 파일, Python 구문 오류, 노트북 형식 오류·저장된 출력을 검사합니다. 토큰 등 모든 비밀정보를 검출하는 보안 스캐너는 아닙니다.
+원본 데이터 없이 실행함.
+파일 정책과 노트북 형식은 `.github/scripts/check_repository.py`로 검사함.
+문서의 로컬 링크는 `src/check_delivery.py`, 보고서 생성과 지표 계산은 `tests/`로 검사함.
+CI는 `python -m unittest discover -s tests -v`도 실행함.
 
-노트북 코드를 실행하지 않으므로 실행 순서·패키지 호환·분석 정확성을 보장하지 않습니다. 분석 코드가 생기면 `tests/`에 실제 데이터 계약과 분할 검증을 작성하고 CI에 테스트 명령을 추가합니다. 테스트 데이터는 공유 가능한 작은 합성 데이터로 만듭니다.
+모델을 다시 학습하지 않으므로 성능이나 현장 고장 탐지 정확성을 보장하지 않음.
+저장된 로컬 CSV의 지표까지 확인하려면 `python src/check_delivery.py --results-dir data/processed/model_results`를 실행함.
 
 ## 자동 배정
 

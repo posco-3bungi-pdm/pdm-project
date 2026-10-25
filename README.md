@@ -1,9 +1,6 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="figures/readme/hero-dark.svg">
-  <img alt="CAL01 연속 소둔로 이상 탐지: 3σ 통계 후보, 팀 판단, 규칙으로 정답을 다듬고 시간 순서를 지켜 모델을 시험" src="figures/readme/hero-light.svg" width="100%">
-</picture>
+<img alt="CAL01 연속 소둔로 이상 탐지: 관제 시뮬레이션의 3D 소둔로가 금속 설비에서 홀로그램으로 바뀜. 3σ 통계 후보, 팀 판단, 규칙으로 정답을 다듬고 시간 순서를 지켜 모델을 시험" src="figures/readme/hero.webp" width="100%">
 
 [![CI](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml/badge.svg)](https://github.com/posco-3bungi-pdm/pdm-project/actions/workflows/ci.yml)
 [![정답](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fposco-3bungi-pdm%2Fpdm-project%2Fmain%2Ffigures%2Freadme%2Fmetrics.json&query=%24.label_version&label=%EC%A0%95%EB%8B%B5&color=5ec8ff&style=flat-square&labelColor=0b0f0c)](#정답을-일곱-번-다듬음-v1--v7)
@@ -34,7 +31,7 @@
 <th width="50%">공동 검토 · cal01-review</th>
 </tr>
 <tr>
-<td><img alt="관제 화면: 3D 소둔로, 홀로그램, 기록 재생, 구역 확대, 채널 그래프, 과거 LOT 이상 후보, 팀 확인 요청" src="figures/readme/monitor.gif" width="100%"></td>
+<td><img alt="관제 화면: 3D 소둔로가 홀로그램으로 바뀌고 CP-Z4와 가스 분석계 셀까지 확대" src="figures/readme/monitor.webp" width="100%"></td>
 <td><img alt="검토 화면: LOT 고르기, 후보 목록과 그래프, 판단 메모, 채널 선택, 팀원 기록, LOT 나란히 비교" src="figures/readme/review.gif" width="100%"></td>
 </tr>
 <tr>
@@ -130,7 +127,7 @@ v7의 규칙 2개는 팀이 네 번 내린 판단(출력 움직임은 정상 제
 
 모든 값은 같은 LOT 안에서 지금보다 앞선 분의 값만 씀. 미래 값은 입력에도 통계에도 쓰지 않음.
 
-| 묶음 | 쉬운 뜻 | 03 스위치 |
+| 묶음 | 쉬운 뜻 | 03에서 이 컬럼 묶음을 넣는 설정 |
 | --- | --- | --- |
 | 기본 | 내 구역 센서의 1분 평균, 바로 앞 분과의 차이, 1분 안 최소·최대·표준편차 | 항상 |
 | 공통 움직임 | 같은 그룹(Z1·Z2, Z3 ~ Z6, Z7·Z8) 온도의 5분 변화, 내 구역 말고 최근 5분 안에 3σ 넘은 온도 수 | `USE_COMMON` |

@@ -5,7 +5,7 @@
 
 - 외부 도구 없이 문자열로 SVG를 씀. 애니메이션은 SVG 표준(SMIL)이라 GitHub README에서 그대로 움직임
 - 양각(올라온 판), 음각(파인 홈), 겹친 도형으로 입체감을 냄. 필터는 SVG 표준(feDropShadow, feGaussianBlur, feTurbulence)만 씀
-- 만드는 파일: hero, flow, walkforward, labels, domain (각각 -dark.svg, -light.svg)
+- 만드는 파일: flow, labels, domain (각각 -dark.svg, -light.svg). hero, walkforward는 make_readme_motion.py가 만듦
 """
 
 import os
@@ -164,45 +164,6 @@ def write(name, theme, body):
     print("wrote", os.path.relpath(path))
 
 
-# ---------------------------------------------------------------- 1. 머리 배너
-def hero(theme):
-    t = THEMES[theme]
-    W, H = 1200, 400
-    s = head(W, H, t)
-    s += layered_decor(t, 1060, 90, 190, t["accent"])
-    s += layered_decor(t, 210, 390, 150, t["cool"])
-    s += text(56, 78, "CAL01 PREDICTIVE MAINTENANCE", 15, t["sub"], extra='letter-spacing="3"')
-    s += emboss_text(t, 56, 134, "연속 소둔로의 흐름을 보고,", 40, t["ink"])
-    s += emboss_text(t, 56, 186, "같은 구간을 팀이 함께 판단함", 40, t["accent"])
-    s += text(56, 226, "3σ 통계 후보 → 팀 판단 → 규칙으로 정답을 다듬고, 시간 순서를 지켜 모델을 시험함", 16, t["sub"])
-
-    x = 56
-    for label, col in [("14 LOT · 345,390 원기록 · 21 센서", t["cool"]), ("팀 판단 33건 · 전 구역 검토 81건 · 규칙 2개", t["warm"]),
-                       ("Z4 F1 0.60 Z-score · 0.59 RandomForest", t["accent"])]:
-        piece, w = pill(t, x, 250, label, col)
-        s += piece
-        x += w + 14
-
-    # 로 구역 띠: 파인 홈 위에 올라온 판 11개
-    bx, by, bw, bh, gap = 56, 318, 92, 44, 8
-    s += inset(t, bx - 16, by - 10, 11 * (bw + gap) + 24, bh + 20, 16)
-    y_line = by + bh / 2
-    s += groove(t, bx - 8, y_line, bx + 11 * (bw + gap) + 2, y_line, dash="6 6")
-    for i, (zone, kind) in enumerate(ZONES):
-        x0 = bx + i * (bw + gap)
-        col = t[kind]
-        s += '<rect x="%d" y="%d" width="%d" height="%d" rx="10" fill="url(#plate)" filter="url(#shadow-sm)"/>\n' % (x0, by, bw, bh)
-        s += '<rect x="%d" y="%d" width="%d" height="%d" rx="10" fill="%s" fill-opacity="0.15">' % (x0, by, bw, bh, col)
-        s += '<animate attributeName="fill-opacity" values="0.15;0.85;0.15" keyTimes="0;0.5;1" dur="6s" begin="%.2fs" repeatCount="indefinite"/></rect>\n' % (i * 0.45)
-        s += '<path d="M %d %d L %d %d" stroke="%s" stroke-opacity="%s" stroke-width="1.5"/>\n' % (x0 + 10, by + 1, x0 + bw - 10, by + 1, t["hi"], t["hi_a"])
-        s += emboss_text(t, x0 + bw / 2, by + 28, zone, 15, t["ink"], anchor="middle")
-    s += coin(t, 0, 0, 7, t["accent"], ' opacity="0"')
-    s += '<g><animateMotion dur="6s" repeatCount="indefinite" path="M %d %d L %d %d"/>' % (bx - 8, y_line, bx + 11 * (bw + gap) + 2, y_line)
-    s += '<circle r="9" fill="%s" filter="url(#glow)"/><circle r="9" fill="url(#coin)"/></g>\n' % t["accent"]
-    s += "</svg>\n"
-    write("hero", theme, s)
-
-
 # ---------------------------------------------------------------- 2. 세 저장소 흐름
 def flow(theme):
     t = THEMES[theme]
@@ -240,52 +201,6 @@ def flow(theme):
     s += up_arrow(t, 984, y0 + ch - 2, t["accent"])
     s += "</svg>\n"
     write("flow", theme, s)
-
-
-# ---------------------------------------------------------------- 3. 시계열 걷기
-def walkforward(theme):
-    t = THEMES[theme]
-    W, H = 1200, 350
-    s = head(W, H, t)
-    s += layered_decor(t, 1130, 330, 170, t["warm"])
-    s += emboss_text(t, 56, 48, "시간 순서를 지키는 시험: 앞 LOT으로 배우고, 바로 다음 LOT 하나를 맞힘 (10번 반복)", 18, t["ink"])
-    bw, gap, bx, by, bh = 72, 8, 56, 92, 92
-    steps = 10
-    dur = 20.0
-    key_times = ";".join("%.3f" % (k / steps) for k in range(steps + 1))
-    s += inset(t, bx - 14, by - 12, 14 * (bw + gap) + 20, bh + 24, 16)
-    for i, (lot, grade, date) in enumerate(LOTS):
-        x0 = bx + i * (bw + gap)
-        fills = []
-        for k in range(steps):
-            test_i = 4 + k
-            fills.append(t["accent"] if i < test_i else (t["hot"] if i == test_i else t["plate2"]))
-        fills.append(fills[-1])
-        s += '<rect x="%d" y="%d" width="%d" height="%d" rx="12" fill="url(#plate)" filter="url(#shadow-sm)"/>\n' % (x0, by, bw, bh)
-        s += '<rect x="%d" y="%d" width="%d" height="%d" rx="12" fill="%s" fill-opacity="0.45">' % (x0, by, bw, bh, fills[0])
-        s += '<animate attributeName="fill" values="%s" keyTimes="%s" calcMode="discrete" dur="%ss" repeatCount="indefinite"/></rect>\n' % (";".join(fills), key_times, dur)
-        s += '<path d="M %d %d L %d %d" stroke="%s" stroke-opacity="%s" stroke-width="1.5"/>\n' % (x0 + 12, by + 1, x0 + bw - 12, by + 1, t["hi"], t["hi_a"])
-        s += emboss_text(t, x0 + bw / 2, by + 36, lot, 18, t["ink"], anchor="middle")
-        s += text(x0 + bw / 2, by + 58, grade, 11, t["sub"], anchor="middle")
-        s += text(x0 + bw / 2, by + 76, date, 11, t["sub"], anchor="middle")
-    # 단계 설명은 파인 홈 안에서 번갈아 보임
-    s += inset(t, 56, 220, 1088, 44, 12)
-    for k in range(steps):
-        lot = LOTS[4 + k][0]
-        vis = ["0"] * (steps + 1)
-        vis[k] = "1"
-        s += '<text x="%d" y="248" font-size="16" fill="%s" text-anchor="middle" opacity="0">시험 %d / 10 : 앞의 %d개 LOT으로 배우고 LOT %s를 맞힘' % (
-            W / 2, t["ink"], k + 1, 4 + k, lot)
-        s += '<animate attributeName="opacity" values="%s" keyTimes="%s" calcMode="discrete" dur="%ss" repeatCount="indefinite"/></text>\n' % (";".join(vis), key_times, dur)
-    lx = 56
-    for label, col in [("학습에 씀", t["accent"]), ("지금 시험하는 LOT", t["hot"]), ("아직 안 본 미래", t["sub"])]:
-        s += coin(t, lx + 8, 298, 7, col)
-        s += text(lx + 24, 303, label, 13, t["sub"])
-        lx += 24 + len(label) * 13 + 30
-    s += text(W - 56, 303, "10번의 결과를 모두 합쳐 F1을 냄 · 첫 4개 LOT은 학습에만 씀 · random_state = 42", 13, t["sub"], anchor="end")
-    s += text(W - 56, 328, "LOT 번호가 곧 시간 순서 (2024-01 → 2024-12). 미래 값은 입력에도, 통계에도 쓰지 않음", 12, t["sub"], anchor="end")
-    s += "</svg>\n"
-    write("walkforward", theme, s)
 
 
 # ---------------------------------------------------------------- 4. 정답 v1 → v7
@@ -388,8 +303,6 @@ def domain(theme):
 
 if __name__ == "__main__":
     for theme in THEMES:
-        hero(theme)
         flow(theme)
-        walkforward(theme)
         labels(theme)
         domain(theme)

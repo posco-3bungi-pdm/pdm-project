@@ -15,7 +15,7 @@ models/
         rf-fold13-<날짜>.joblib      # RandomForest, LOT 1 ~ 13. 03의 마지막 시험과 같은 모델 (재현 확인용)
         iso-all14-<날짜>.joblib      # IsolationForest, 14 LOT 전체. 검토 후보 표시용
         features.json                # 입력 컬럼 순서와 계산 규칙
-        config.json                  # 스위치, 파라미터, 학습 LOT, 라벨 규칙, 데이터 해시, 재현 확인 결과
+        config.json                  # 입력 컬럼 묶음 설정, 파라미터, 학습 LOT, 라벨 규칙, 데이터 해시, 재현 확인 결과
         metrics.json                 # 03 시간순 걷기 결과
         fold13_expected.json         # fold13 모델의 LOT 133 예측 (관제 입력 계산 확인용)
       Z3/  Z5/  Z6/
@@ -28,7 +28,7 @@ models/
 ## 만드는 법
 
 1. 03을 그 구역으로 먼저 실행해 `data/processed/model_results/`에 결과가 있어야 함 (metrics와 재현 확인에 씀)
-2. 05의 1번 셀에서 `DATA_FILE`, `ZONE`을 정하고 실행. `USE_` 스위치는 03과 같은 값
+2. 05의 1번 셀에서 `DATA_FILE`, `ZONE`을 정하고 실행. `USE_` 입력 컬럼 묶음 설정은 03과 같은 값
 3. 9번 셀의 재현 확인이 `True`인지 봄. `False`면 05의 입력 계산이 03과 어긋난 것
 4. 구역마다 2 ~ 3을 반복 (지금은 Z3 ~ Z6)
 
